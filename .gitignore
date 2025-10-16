@@ -1,0 +1,35 @@
+# Compiled executables
+compiled/
+*.o
+*.exe
+
+# Temporary files
+*.tmp
+*.temp
+*.log
+*.txt
+!requirements.txt
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Backup files
+*.bak
+*.backup
+
+# Test outputs
+test_output/
+benchmark_results.txt
+report_data.txt
+
+# Large data files
+*.dat
+*.bin
