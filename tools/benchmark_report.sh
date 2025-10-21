@@ -1,12 +1,12 @@
 #!/bin/bash
-# Comprehensive benchmark script for matrix multiplication report
+# Comprehensive benchmark script for Strassen Algorithm matrix multiplication report
 # Tests: matrix_size = 10, 100, 1000
 # Tests: num_processes = 10, 100, 1000
 
 set -e
 
 echo "=========================================="
-echo "MATRIX MULTIPLICATION PERFORMANCE REPORT"
+echo "STRASSEN ALGORITHM MATRIX MULTIPLICATION PERFORMANCE REPORT"
 echo "=========================================="
 echo "Date: $(date)"
 echo "System: $(uname -a)"

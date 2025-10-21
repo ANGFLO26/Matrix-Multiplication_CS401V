@@ -1,5 +1,5 @@
 #!/bin/bash
-# Quick test script for matrix multiplication performance
+# Quick test script for Strassen Algorithm matrix multiplication performance
 
 echo "=========================================="
 echo "QUICK PERFORMANCE TEST"

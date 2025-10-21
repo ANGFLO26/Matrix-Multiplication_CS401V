@@ -1,10 +1,10 @@
 #!/bin/bash
-# Benchmark script for matrix multiplication assignment
+# Benchmark script for Strassen Algorithm matrix multiplication assignment
 # Tests all three implementations with required matrix sizes and process counts
 
 set -e
 
-echo "=== Matrix Multiplication Benchmark ==="
+echo "=== Strassen Algorithm Matrix Multiplication Benchmark ==="
 echo "Compiling all programs..."
 
 # Compile all programs

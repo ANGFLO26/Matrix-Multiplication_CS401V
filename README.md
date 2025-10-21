@@ -1,15 +1,15 @@
 # Matrix Multiplication Parallel Computing
 
 **CS401V - Distributed Systems Assignment 1**  
-**Group Members:** Phan Văn Tài (2202081) & Hà Minh Chiến (2202095)
+**Nhóm**: Phan Văn Tài (2202081) & Hà Minh Chiến (2202095)
 
 ## 📋 Project Overview
 
-This project implements and compares three different approaches to matrix multiplication:
+This project implements and compares three different approaches to matrix multiplication using **Strassen Algorithm**:
 
-1. **Sequential**: Traditional O(n³) algorithm using single process
-2. **Parallel Row**: Row-level parallelization with work-stealing using multiple processes
-3. **Parallel Element**: Element-level parallelization with work-stealing using multiple processes
+1. **Sequential**: Strassen Algorithm O(n^log₂7) using single process
+2. **Parallel Row**: Row-level parallelization with Strassen Algorithm using multiple processes
+3. **Parallel Element**: Element-level parallelization with Strassen Algorithm using multiple processes
 
 ## 🎯 Objectives
 
@@ -43,41 +43,76 @@ gcc src/parallelElementMult.c -o compiled/parallelElementMult -pthread
 ### Running Tests
 ```bash
 # Quick performance test
-./scripts/quick_test.sh
+./tools/quick_test.sh
 
 # Full benchmark with all configurations
-./scripts/benchmark_report.sh
+./tools/benchmark_report.sh
 ```
 
 ## 📊 Performance Results
 
-### Key Findings
-- **Best Performance**: Parallel Row with 1000 processes
-- **Maximum Speedup**: 7.1x for 1000×1000 matrices
-- **Memory Bottleneck**: Observed with 2000×2000 matrices
+### Key Findings (Strassen Algorithm)
+- **Best Performance**: Parallel Row with 10-100 processes for medium matrices
+- **Maximum Speedup**: 4.87x for 256×256 matrices with 10 processes
+- **Algorithm Efficiency**: O(n^log₂7) vs O(n³) for large matrices
 
-### Performance Summary
-| Matrix Size | Sequential | Parallel Row (1000p) | Speedup |
-|-------------|------------|---------------------|---------|
-| 100×100     | 2.2ms      | 0.7ms               | 3.2x    |
-| 1000×1000   | 3.47s      | 0.49s               | 7.1x    |
-| 2000×2000   | 32.23s     | 5.69s               | 5.7x    |
+### Performance Summary (Strassen Algorithm)
+| Matrix Size | Sequential | Parallel Row (p=10) | Speedup | Parallel Row (p=100) | Speedup |
+|-------------|------------|---------------------|---------|----------------------|---------|
+| 256×256     | 11.5ms     | 2.4ms               | 4.87x   | 5.2ms                | 2.20x   |
+| 512×512     | 75.1ms     | 28.0ms              | 2.68x   | 29.4ms               | 2.56x   |
+| 1024×1024   | 540.4ms    | 648.5ms             | 0.83x   | 397.0ms              | 1.36x   |
 
-## 🏗️ Project Structure
+## 🏗️ Project Structure (Fully Optimized)
 
 ```
-assignment1_code/
-├── src/                    # Source code
-│   ├── sequentialMult.c    # Sequential implementation
-│   ├── parallelRowMult.c   # Row-level parallel implementation
-│   ├── parallelElementMult.c # Element-level parallel implementation
-│   └── common.h           # Common utilities
-├── compiled/               # Compiled executables
-├── scripts/                # Utility scripts
-├── reports/                # Performance analysis reports
-├── docs/                   # Assignment documentation
-├── requirements.txt        # System requirements
-└── README.md              # This file
+📁 assignment1_code/
+├── 📄 README.md                    # Tài liệu chính
+├── 📄 requirements.txt             # Yêu cầu hệ thống
+├── 📄 Makefile                     # Build automation
+├── 📁 src/                         # Source code (40KB)
+│   ├── sequentialMult.c           # Sequential implementation
+│   ├── parallelRowMult.c          # Parallel row implementation
+│   ├── parallelElementMult.c      # Parallel element implementation
+│   ├── common.h                   # Common utilities
+│   ├── strassen_utils.h           # Strassen utilities header
+│   └── strassen_utils.c           # Strassen utilities implementation
+├── 📁 compiled/                    # Executables (76KB) ⭐ CẦN THIẾT
+│   ├── sequentialMult
+│   ├── parallelRowMult
+│   └── parallelElementMult
+├── 📁 tools/                       # Utility scripts (16KB)
+│   ├── quick_test.sh              # Quick performance test
+│   ├── benchmark.sh               # Comprehensive benchmark
+│   └── benchmark_report.sh        # Report generation
+├── 📁 docs/                        # Documentation (316KB)
+│   └── Assignment 1 - CS401V - Distributed Systems.pdf
+└── 📁 reports/                     # TẤT CẢ BÁO CÁO VÀ KẾT QUẢ (2.6MB)
+    ├── 📄 FINAL_REPORT.md          # Báo cáo chính
+    ├── 📄 PERFORMANCE_REPORT.md   # Báo cáo kỹ thuật
+    ├── 📄 SUMMARY_RESULTS.md       # Tóm tắt kết quả
+    ├── 📁 charts/                  # Biểu đồ đã tạo (7 files)
+    │   ├── 01_speedup_vs_matrix_size.png
+    │   ├── 02_speedup_vs_process_count.png
+    │   ├── 03_row_vs_element_comparison.png
+    │   ├── 04_efficiency_heatmap.png
+    │   ├── 09_algorithm_complexity.png
+    │   ├── 11_scalability_analysis.png
+    │   └── 13_3d_performance_surface.png
+    ├── 📁 logs/                    # Benchmark logs
+    │   └── strassen_comprehensive.log
+    └── 📁 visualization/           # Hệ thống tạo biểu đồ
+        ├── 📁 code/                # Scripts tạo biểu đồ
+        │   ├── extract_data.py     # Data extraction
+        │   ├── generate_charts.py  # Basic charts (1-4)
+        │   └── generate_additional_charts.py # Advanced charts (9,11,13)
+        ├── 📁 data/                # Dữ liệu đã xử lý
+        │   ├── raw_data.csv
+        │   ├── raw_data.json
+        │   ├── speedup_data.csv
+        │   └── speedup_data.json
+        ├── 📄 README.md            # Hướng dẫn charts
+        └── 📄 CHART_GUIDE.md       # Chi tiết charts
 ```
 
 ## 🔧 Technical Implementation
@@ -109,9 +144,14 @@ assignment1_code/
 
 ## 📚 Reports & Documentation
 
-- **FINAL_REPORT.md**: Comprehensive performance analysis
-- **PERFORMANCE_REPORT.md**: Technical implementation details
-- **SUMMARY_RESULTS.md**: Quick reference for key results
+- **FINAL_STRASSEN_REPORT.md**: Comprehensive Strassen Algorithm performance analysis
+- **strassen_analysis_report.md**: Detailed analysis report
+- **charts/**: Performance visualization charts
+  - strassen_execution_time.png: Execution time comparison
+  - strassen_speedup.png: Speedup analysis
+  - strassen_process_analysis.png: Process optimization
+- **logs/**: Benchmark execution logs
+  - strassen_comprehensive.log: Complete benchmark results
 
 ## 🛠️ Usage Examples
 
@@ -130,7 +170,7 @@ assignment1_code/
 ### Advanced Benchmarking
 ```bash
 # Test all configurations
-./scripts/benchmark_report.sh
+./tools/benchmark_report.sh
 
 # Custom matrix sizes
 ./compiled/sequentialMult 2000
@@ -153,10 +193,36 @@ assignment1_code/
 
 See `requirements.txt` for detailed system requirements and installation instructions.
 
+## 🎯 Structure Optimization
+
+### **✅ Optimizations Applied:**
+1. **Consolidated Structure**: All results in `reports/` directory
+2. **Created `reports/visualization/`**: Contains chart generation system
+3. **Maintained `reports/charts/`**: Contains generated charts
+4. **Renamed**: `scripts/` → `tools/` (clearer naming)
+5. **Removed Duplicates**: Eliminated redundant files and folders
+6. **Updated Paths**: All scripts work with new structure
+
+### **📊 Final Statistics:**
+- **Total Size**: 3.7MB
+- **Main Directories**: 6 (streamlined)
+- **Key Files**: ~25 important files
+- **Charts**: 7 core visualizations
+- **Reports**: 3 comprehensive reports
+- **Visualization**: Complete chart generation system
+
+### **✨ Benefits of Optimized Structure:**
+1. **🎯 Clean**: Eliminated duplicates, only 6 main directories
+2. **📁 Logical**: All results in `reports/`, no confusion
+3. **🔍 Easy Navigation**: Intuitive structure, easy to find files
+4. **⚡ Efficient**: Reduced complexity, increased usability
+5. **📊 Complete**: Maintains all functionality
+6. **🚀 Optimized**: Scripts work perfectly, accurate paths
+
 ## 👥 Team Members
 
-- **Phan Văn Tài** (2202081) - Implementation & Testing
-- **Hà Minh Chiến** (2202095) - Analysis & Documentation
+- **Phan Văn Tài (2202081)**: Implementation & Testing
+- **Hà Minh Chiến (2202095)**: Analysis & Documentation
 
 ## 📄 License
 

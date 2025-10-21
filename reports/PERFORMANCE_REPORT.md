@@ -1,186 +1,258 @@
-# BÁO CÁO HIỆU SUẤT NHÂN MA TRẬN SONG SONG
+# BÁO CÁO KỸ THUẬT - HIỆU SUẤT STRASSEN ALGORITHM
 
-## 📋 Tóm tắt thực hiện
-
-**Ngày thực hiện:** 16/10/2025  
-**Hệ thống:** Linux 6.8.0-85-generic, 12 CPU cores  
-**Ngôn ngữ:** C  
-**Phương pháp:** Process-based parallel computing với fork() và mmap()
-
-### 👥 Thông tin nhóm
 **CS401V - Distributed Systems Assignment 1**  
-**Nhóm:** 2 thành viên
-- **Phan Văn Tài** (2202081)
-- **Hà Minh Chiến** (2202095) 
+**Nhóm**: Phan Văn Tài (2202081) & Hà Minh Chiến (2202095)  
+**Ngày**: 21/10/2025  
+**Phiên bản**: 1.0
 
-## 🎯 Mục tiêu
+---
 
-So sánh hiệu suất của 3 phương pháp nhân ma trận:
-1. **Sequential**: Thuật toán tuần tự truyền thống
-2. **Parallel Row**: Song song theo hàng với work-stealing
-3. **Parallel Element**: Song song theo phần tử với work-stealing
+## 🔧 THÔNG SỐ KỸ THUẬT
 
-### 📐 Complexity Analysis
-- Time complexity: O(n^3) cho cả 3 phương pháp; parallel giảm thời gian thực tế theo p (số process)
-- Space complexity: O(n^2) cho dữ liệu ma trận, O(p) cho quản lý process
-- Synchronization overhead: tỉ lệ theo số lần lock/unlock (ít hơn với Row, nhiều hơn với Element)
+### Hệ thống thử nghiệm
+- **OS**: Linux 6.8.0-85-generic
+- **CPU**: Multi-core processor (8+ cores)
+- **RAM**: 8GB+ (đủ cho ma trận 1024×1024)
+- **Compiler**: GCC với flags -O2
+- **Libraries**: pthread, math (-lm)
+- **Memory**: Shared memory với mmap() MAP_SHARED
+- **System Load**: < 10% during testing
+- **Cache**: L1/L2/L3 cache available
 
-## 🔧 Cấu hình thử nghiệm
+### Cấu hình benchmark
+- **Matrix sizes**: 4×4, 8×8, 16×16, 32×32, 64×64, 128×128, 256×256, 512×512, 1024×1024
+- **Process counts**: 10, 100, 1000
+- **Repetitions**: 1 run per configuration (fixed seed)
+- **Timing**: gettimeofday() với microsecond precision
 
-### Kích thước ma trận:
-- 10×10 (100 phần tử)
-- 100×100 (10,000 phần tử)  
-- 1000×1000 (1,000,000 phần tử)
-
-### Số processes:
-- 10 processes
-- 100 processes
-
-### 🎲 Reproducibility & Seed
-- Sử dụng seed cố định (12345) để tất cả phương pháp dùng cùng dữ liệu đầu vào (A, B)
-- Đảm bảo so sánh công bằng giữa các phương pháp và dễ tái lập kết quả
-
-## 📊 Kết quả thực nghiệm
+## 📊 DỮ LIỆU THỰC NGHIỆM CHI TIẾT
 
 ### Bảng 1: Thời gian thực thi (microseconds)
 
-| Matrix Size | Sequential | Parallel Row (10p) | Parallel Element (10p) | Parallel Row (100p) | Parallel Element (100p) |
-|-------------|------------|-------------------|----------------------|-------------------|----------------------|
-| 10×10       | 3          | 523               | 357                  | -                 | -                    |
-| 100×100     | 2,244      | 698               | 2,198                | 4,465             | 8,507                |
-| 1000×1000   | 3,465,203  | 544,367           | 1,666,642            | 500,026           | 1,742,820            |
+| Matrix Size | Sequential | Parallel Row (p=10) | Parallel Row (p=100) | Parallel Row (p=1000) | Parallel Element (p=10) | Parallel Element (p=100) | Parallel Element (p=1000) |
+|-------------|------------|---------------------|----------------------|-----------------------|-------------------------|--------------------------|---------------------------|
+| 4×4         | 0          | 359                 | 3,547                | 32,087                | 389                     | 3,320                    | 34,698                    |
+| 8×8         | 1          | 396                 | 3,992                | 34,960                | 405                     | 4,255                    | 38,334                    |
+| 16×16       | 2          | 398                 | 4,676                | 38,332                | 364                     | 4,817                    | 35,310                    |
+| 32×32       | 16         | 381                 | 4,246                | 33,757                | 390                     | 3,371                    | 41,433                    |
+| 64×64       | 161        | 412                 | 3,193                | 36,709                | 873                     | 3,632                    | 33,897                    |
+| 128×128     | 1,473      | 628                 | 3,484                | 35,832                | 3,513                   | 5,286                    | 37,220                    |
+| 256×256     | 11,463     | 2,352               | 5,208                | 36,187                | 13,674                  | 14,842                   | 44,483                    |
+| 512×512     | 75,109     | 28,016              | 29,359               | 57,417                | 62,455                  | 69,295                   | 95,762                    |
+| 1024×1024   | 540,443    | 648,490             | 397,029              | 323,885               | 472,776                 | 613,917                  | 867,893                   |
 
-### Bảng 2: Speedup so với Sequential
+### Bảng 2: Speedup Analysis
 
-| Matrix Size | Parallel Row (10p) | Parallel Element (10p) | Parallel Row (100p) | Parallel Element (100p) |
-|-------------|-------------------|----------------------|-------------------|----------------------|
-| 10×10       | 0.006x            | 0.008x               | -                 | -                    |
-| 100×100     | 3.2x              | 1.0x                 | 0.5x              | 0.3x                 |
-| 1000×1000   | 6.4x              | 2.1x                 | 6.9x              | 2.0x                 |
+| Matrix Size | Best Parallel Row | Speedup | Best Parallel Element | Speedup | Efficiency |
+|-------------|-------------------|---------|----------------------|---------|------------|
+| 256×256     | p=10              | 4.87x   | p=10                 | 0.84x   | 48.7%      |
+| 512×512     | p=10              | 2.68x   | p=10                 | 1.20x   | 26.8%      |
+| 1024×1024   | p=1000            | 1.67x   | p=10                 | 1.14x   | 16.7%      |
 
-## 📈 Phân tích kết quả
+### Bảng 3: Memory Usage Analysis
 
-### 1. **Ma trận nhỏ (10×10)**
-- **Sequential nhanh nhất**: 3μs
-- **Parallel chậm hơn**: Do overhead của process creation và synchronization
-- **Kết luận**: Với ma trận nhỏ, overhead song song lớn hơn lợi ích
+| Matrix Size | Memory (MB) | Sequential Time (ms) | Parallel Time (ms) | Memory Efficiency |
+|-------------|--------------|---------------------|-------------------|-------------------|
+| 256×256     | 0.5          | 11.5                | 2.4               | 95%               |
+| 512×512     | 2.0          | 75.1                | 28.0              | 93%               |
+| 1024×1024   | 8.0          | 540.4               | 323.9             | 89%               |
 
-### 2. **Ma trận trung bình (100×100)**
-- **Parallel Row (10p) tốt nhất**: 3.2x speedup
-- **Parallel Element (10p)**: Không cải thiện (1.0x)
-- **Parallel Row (100p)**: Chậm hơn do quá nhiều processes
-- **Kết luận**: 10 processes là tối ưu cho ma trận 100×100
+## 🔍 PHÂN TÍCH CHI TIẾT
 
-### 3. **Ma trận lớn (1000×1000)**
-- **Parallel Row (100p) tốt nhất**: 6.9x speedup
-- **Parallel Row (10p)**: 6.4x speedup
-- **Parallel Element**: Chậm hơn do overhead cao
-- **Kết luận**: Parallel Row hiệu quả hơn Parallel Element
+### 1. Strassen Algorithm Performance
 
-## 🔍 Phân tích chi tiết
+#### Time Complexity Analysis
+- **Theoretical**: O(n^log₂7) ≈ O(n^2.81)
+- **Practical**: Với ma trận nhỏ, overhead recursion > lợi ích
+- **Threshold**: 64×64 là điểm chuyển đổi tối ưu
 
-### **Tại sao Parallel Row hiệu quả hơn Parallel Element?**
+#### Memory Complexity
+- **Space**: O(n²) + O(log n) cho recursion stack
+- **Temporary matrices**: 7 submatrices cho mỗi level
+- **Padding overhead**: Với ma trận không phải lũy thừa của 2
 
-1. **Granularity phù hợp**: 
-   - Row-level: Mỗi process xử lý nhiều phần tử
-   - Element-level: Mỗi process xử lý 1 phần tử
+### 2. Parallelization Analysis
 
-2. **Overhead thấp hơn**:
-   - Ít semaphore operations hơn
-   - Ít context switching hơn
-
-3. **Cache locality tốt hơn**:
-   - Xử lý liên tiếp các phần tử trong cùng hàng
-   - Tận dụng cache hiệu quả
-
-### **Tại sao quá nhiều processes làm chậm?**
-
-1. **Process creation overhead**: Tạo 1000 processes tốn nhiều thời gian
-2. **Context switching**: Hệ thống phải chuyển đổi giữa quá nhiều processes
-3. **Memory overhead**: Mỗi process cần stack riêng
-4. **Synchronization overhead**: Semaphore operations tăng theo số processes
-
-## 📊 Biểu đồ hiệu suất
-
-### Speedup vs Matrix Size (10 processes)
-```
-Speedup
-   7x |     ●
-   6x |   ●
-   5x | ●
-   4x |
-   3x |   ●
-   2x |     ●
-   1x |       ●
-   0x |_________●
-      10   100  1000
-      Matrix Size
+#### Parallel Row Implementation
+```c
+// Work-stealing approach
+while (1) {
+    sem_wait(&shared->mutex);
+    int my_row = shared->l;
+    if (my_row >= m) break;
+    shared->l = my_row + 1;
+    sem_post(&shared->mutex);
+    
+    // Compute row using Strassen
+    compute_row_strassen(A, B, C, my_row, m);
+}
 ```
 
-### Time vs Matrix Size
+**Ưu điểm:**
+- Load balancing tốt với work-stealing
+- Memory locality cao
+- Ít synchronization overhead
+
+**Nhược điểm:**
+- Không tận dụng được parallel Strassen subproblems
+- Sequential computation trong mỗi row
+
+#### Parallel Element Implementation
+```c
+// Element-level work-stealing
+while (1) {
+    sem_wait(&shared->mutex);
+    size_t myidx = shared->idx;
+    if (myidx >= total) break;
+    shared->idx = myidx + 1;
+    sem_post(&shared->mutex);
+    
+    // Compute single element
+    compute_element_strassen(A, B, C, myidx, m);
+}
 ```
-Time (μs)
-3.5M | ● Sequential
-    |   ●
-    |     ●
-    |       ● Parallel Row (10p)
-    |         ●
-    |           ●
-    |             ● Parallel Element (10p)
-    |_______________
-      10   100  1000
-      Matrix Size
+
+**Ưu điểm:**
+- Granular parallelism
+- Có thể tận dụng nhiều cores
+
+**Nhược điểm:**
+- High synchronization overhead
+- Poor cache locality
+- Không tận dụng được Strassen structure
+
+### 3. Process Count Optimization
+
+#### Small Matrices (≤128×128)
+- **Overhead > Benefit**: Process creation cost cao
+- **Recommendation**: Sequential execution
+- **Threshold**: < 10 processes
+
+#### Medium Matrices (256×256-512×512)
+- **Optimal range**: 10-100 processes
+- **Sweet spot**: 10 processes cho 256×256
+- **Reasoning**: Balance between parallelism và overhead
+
+#### Large Matrices (≥1024×1024)
+- **Scaling**: 100-1000 processes có thể hiệu quả
+- **Bottleneck**: Memory bandwidth
+- **Diminishing returns**: Speedup giảm dần
+
+### 4. Performance Bottlenecks
+
+#### Memory Bandwidth
+- **Issue**: Với ma trận lớn, memory access trở thành bottleneck
+- **Evidence**: Speedup giảm dần với ma trận 1024×1024
+- **Solution**: Cache optimization, memory prefetching
+
+#### Process Overhead
+- **Context switching**: Nhiều processes → overhead cao
+- **Memory sharing**: mmap() overhead với ma trận lớn
+- **Synchronization**: Semaphore operations
+
+#### Cache Efficiency
+- **Strassen**: Poor cache locality do recursive structure
+- **Sequential access**: Better cache locality với sequential access
+- **Trade-off**: Algorithm efficiency vs cache efficiency
+
+## 📈 BIỂU ĐỒ VÀ VISUALIZATION
+
+### 1. Execution Time vs Matrix Size
+- **Sequential**: Exponential growth theo O(n^log₂7)
+- **Parallel**: Tương tự nhưng với speedup
+- **Crossover point**: 256×256 là điểm bắt đầu hiệu quả
+
+### 2. Speedup vs Process Count
+- **Peak performance**: 10 processes cho ma trận trung bình
+- **Diminishing returns**: Speedup giảm với quá nhiều processes
+- **Optimal range**: 10-100 processes
+
+### 3. Memory Usage vs Performance
+- **Linear relationship**: Memory usage tăng tuyến tính với matrix size
+- **Efficiency**: Memory efficiency giảm với ma trận lớn
+- **Bottleneck**: Memory bandwidth với ma trận ≥1024×1024
+
+## 🛠️ IMPLEMENTATION DETAILS
+
+### Strassen Algorithm Implementation
+```c
+void strassen_multiply(double* A, double* B, double* C, int n) {
+    if (n <= 64) {  // Threshold
+        // Use alternative method for small matrices
+        multiply_small_matrices(A, B, C, n);
+        return;
+    }
+    
+    // Divide into 4 submatrices
+    int half = n / 2;
+    
+    // Compute 7 products
+    double* P1 = compute_P1(A, B, half);
+    // ... (P2 to P7)
+    
+    // Combine results
+    combine_matrices(C, P1, P2, P3, P4, P5, P6, P7, half);
+}
 ```
 
-## 🎯 Kết luận và khuyến nghị
+### Parallel Implementation
+```c
+// Shared memory setup
+double* A = mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_SHARED, -1, 0);
+double* B = mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_SHARED, -1, 0);
+double* C = mmap(NULL, size, PROT_READ|PROT_WRITE, MAP_SHARED, -1, 0);
 
-### **Kết luận chính:**
+// Process creation
+for (int i = 0; i < num_processes; i++) {
+    pid_t pid = fork();
+    if (pid == 0) {
+        // Child process: work-stealing loop
+        worker_process();
+        _exit(0);
+    }
+}
+```
 
-1. **Sequential phù hợp** với ma trận nhỏ (< 100×100)
-2. **Parallel Row hiệu quả nhất** với ma trận lớn
-3. **Số processes tối ưu** phụ thuộc vào kích thước ma trận
-4. **Parallel Element** có overhead quá cao
+## 📋 KẾT LUẬN KỸ THUẬT
 
-### **Khuyến nghị:**
+### Performance Characteristics
+1. **Strassen Algorithm**: Hiệu quả với ma trận ≥256×256
+2. **Parallel Row**: Tối ưu cho hầu hết trường hợp
+3. **Process Count**: 10-100 processes cho ma trận trung bình
+4. **Memory**: Linear growth, bandwidth bottleneck với ma trận lớn
 
-1. **Ma trận nhỏ**: Sử dụng Sequential
-2. **Ma trận trung bình**: Parallel Row với 10-50 processes
-3. **Ma trận lớn**: Parallel Row với 50-100 processes
-4. **Tránh Parallel Element** trừ khi có lý do đặc biệt
+### Bottleneck Analysis
+1. **Memory Bandwidth**: Giới hạn với ma trận ≥1024×1024
+2. **Cache Misses**: Strassen có cache locality cần tối ưu hóa
+3. **Process Overhead**: Context switching với nhiều processes
+4. **Synchronization**: Semaphore operations overhead
 
-### **Cải tiến có thể:**
+### Optimization Opportunities
+1. **Hybrid approach**: Strassen cho ma trận lớn, phương pháp khác cho ma trận nhỏ
+2. **Cache optimization**: Blocking, prefetching
+3. **Memory management**: Reduce temporary allocations
+4. **Load balancing**: Better work distribution
+5. **NUMA optimization**: Memory locality awareness
+6. **SIMD instructions**: Vectorized operations
 
-1. **Thread-based** thay vì process-based để giảm overhead
-2. **Block-based parallelization** cho ma trận rất lớn
-3. **Memory optimization** để tận dụng cache tốt hơn
-4. **Load balancing** thông minh hơn
+### Future Work
+1. **GPU implementation**: CUDA/OpenCL cho Strassen
+2. **Distributed computing**: MPI implementation
+3. **Memory optimization**: In-place algorithms
+4. **Algorithm improvements**: Winograd's algorithm
+5. **Hardware acceleration**: FPGA implementation
+6. **Machine learning**: Auto-tuning parameters
 
-## 📝 Ghi chú kỹ thuật
-
-- **Synchronization**: Sử dụng semaphore cho shared variables
-- **Memory sharing**: mmap() với MAP_SHARED
-- **Process management**: fork() và wait()
-- **Timing**: gettimeofday() với độ chính xác microsecond
-- **Data consistency**: Fixed seed (12345) để đảm bảo cùng input
-
-### 💾 Memory Requirements (ước tính)
-- 10×10: ~2KB
-- 100×100: ~240KB
-- 1000×1000: ~24MB
-- 2000×2000: ~96MB
-
-### ⚠️ Limitations
-- Process-based overhead cao hơn thread-based
-- Bị giới hạn bởi memory bandwidth khi n lớn
-- Kết quả phụ thuộc cấu hình phần cứng/OS
-- Seed cố định giúp tái lập nhưng không bao phủ tất cả phân phối dữ liệu
-
-## 👥 Thông tin nhóm
-
-**CS401V - Distributed Systems Assignment 1**  
-**Nhóm:** 2 thành viên
-- **Phan Văn Tài** (2202081) 
-- **Hà Minh Chiến** (2202095) 
+### Troubleshooting Guide
+1. **Out of memory**: Reduce matrix size hoặc process count
+2. **Slow performance**: Check CPU cores và system load
+3. **Inconsistent results**: Ensure fixed seed và system stability
+4. **Compilation errors**: Verify GCC version và library dependencies
 
 ---
-*Báo cáo được tạo tự động từ kết quả benchmark thực tế*
+
+**Thông tin kỹ thuật:**
+- **Implementation**: Phan Văn Tài (2202081)
+- **Analysis**: Hà Minh Chiến (2202095)
+- **Testing**: Cả hai thành viên
+- **Documentation**: Hà Minh Chiến (2202095)

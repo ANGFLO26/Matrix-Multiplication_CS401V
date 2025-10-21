@@ -1,0 +1,377 @@
+{
+  "sequential": [
+    {
+      "matrix_size": 4,
+      "time_us": 0,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 8,
+      "time_us": 1,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 16,
+      "time_us": 2,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 32,
+      "time_us": 16,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 64,
+      "time_us": 161,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 128,
+      "time_us": 1473,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 256,
+      "time_us": 11463,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 512,
+      "time_us": 75109,
+      "method": "sequential"
+    },
+    {
+      "matrix_size": 1024,
+      "time_us": 540443,
+      "method": "sequential"
+    }
+  ],
+  "parallel_row": [
+    {
+      "matrix_size": 4,
+      "processes": 10,
+      "time_us": 359,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 4,
+      "processes": 100,
+      "time_us": 3547,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 4,
+      "processes": 1000,
+      "time_us": 32087,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 8,
+      "processes": 10,
+      "time_us": 396,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 8,
+      "processes": 100,
+      "time_us": 3992,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 8,
+      "processes": 1000,
+      "time_us": 34960,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 16,
+      "processes": 10,
+      "time_us": 398,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 16,
+      "processes": 100,
+      "time_us": 4676,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 16,
+      "processes": 1000,
+      "time_us": 38332,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 32,
+      "processes": 10,
+      "time_us": 381,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 32,
+      "processes": 100,
+      "time_us": 4246,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 32,
+      "processes": 1000,
+      "time_us": 33757,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 64,
+      "processes": 10,
+      "time_us": 412,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 64,
+      "processes": 100,
+      "time_us": 3193,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 64,
+      "processes": 1000,
+      "time_us": 36709,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 128,
+      "processes": 10,
+      "time_us": 628,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 128,
+      "processes": 100,
+      "time_us": 3484,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 128,
+      "processes": 1000,
+      "time_us": 35832,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 256,
+      "processes": 10,
+      "time_us": 2352,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 256,
+      "processes": 100,
+      "time_us": 5208,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 256,
+      "processes": 1000,
+      "time_us": 36187,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 512,
+      "processes": 10,
+      "time_us": 28016,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 512,
+      "processes": 100,
+      "time_us": 29359,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 512,
+      "processes": 1000,
+      "time_us": 57417,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 1024,
+      "processes": 10,
+      "time_us": 648490,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 1024,
+      "processes": 100,
+      "time_us": 397029,
+      "method": "parallel_row"
+    },
+    {
+      "matrix_size": 1024,
+      "processes": 1000,
+      "time_us": 323885,
+      "method": "parallel_row"
+    }
+  ],
+  "parallel_element": [
+    {
+      "matrix_size": 4,
+      "processes": 10,
+      "time_us": 389,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 4,
+      "processes": 100,
+      "time_us": 3320,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 4,
+      "processes": 1000,
+      "time_us": 34698,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 8,
+      "processes": 10,
+      "time_us": 405,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 8,
+      "processes": 100,
+      "time_us": 4255,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 8,
+      "processes": 1000,
+      "time_us": 38334,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 16,
+      "processes": 10,
+      "time_us": 364,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 16,
+      "processes": 100,
+      "time_us": 4817,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 16,
+      "processes": 1000,
+      "time_us": 35310,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 32,
+      "processes": 10,
+      "time_us": 390,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 32,
+      "processes": 100,
+      "time_us": 3371,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 32,
+      "processes": 1000,
+      "time_us": 41433,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 64,
+      "processes": 10,
+      "time_us": 873,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 64,
+      "processes": 100,
+      "time_us": 3632,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 64,
+      "processes": 1000,
+      "time_us": 33897,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 128,
+      "processes": 10,
+      "time_us": 3513,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 128,
+      "processes": 100,
+      "time_us": 5286,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 128,
+      "processes": 1000,
+      "time_us": 37220,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 256,
+      "processes": 10,
+      "time_us": 13674,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 256,
+      "processes": 100,
+      "time_us": 14842,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 256,
+      "processes": 1000,
+      "time_us": 44483,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 512,
+      "processes": 10,
+      "time_us": 62455,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 512,
+      "processes": 100,
+      "time_us": 69295,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 512,
+      "processes": 1000,
+      "time_us": 95762,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 1024,
+      "processes": 10,
+      "time_us": 472776,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 1024,
+      "processes": 100,
+      "time_us": 613917,
+      "method": "parallel_element"
+    },
+    {
+      "matrix_size": 1024,
+      "processes": 1000,
+      "time_us": 867893,
+      "method": "parallel_element"
+    }
+  ]
+}

@@ -6,17 +6,20 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -std=c99 -O2
 PTHREAD_FLAGS = -pthread
+MATH_FLAGS = -lm
 
 # Directories
 SRC_DIR = src
 COMPILED_DIR = compiled
-SCRIPTS_DIR = scripts
+SCRIPTS_DIR = tools
 
 # Source files
 SEQUENTIAL_SRC = $(SRC_DIR)/sequentialMult.c
 PARALLEL_ROW_SRC = $(SRC_DIR)/parallelRowMult.c
 PARALLEL_ELEMENT_SRC = $(SRC_DIR)/parallelElementMult.c
 COMMON_HEADER = $(SRC_DIR)/common.h
+STRASSEN_UTILS_SRC = $(SRC_DIR)/strassen_utils.c
+STRASSEN_UTILS_HEADER = $(SRC_DIR)/strassen_utils.h
 
 # Executable targets
 SEQUENTIAL_EXE = $(COMPILED_DIR)/sequentialMult
@@ -26,20 +29,20 @@ PARALLEL_ELEMENT_EXE = $(COMPILED_DIR)/parallelElementMult
 # Default target
 all: $(SEQUENTIAL_EXE) $(PARALLEL_ROW_EXE) $(PARALLEL_ELEMENT_EXE)
 
-# Sequential implementation
-$(SEQUENTIAL_EXE): $(SEQUENTIAL_SRC) $(COMMON_HEADER)
-	@echo "Compiling sequential implementation..."
-	$(CC) $(CFLAGS) -o $@ $<
+# Sequential implementation with Strassen
+$(SEQUENTIAL_EXE): $(SEQUENTIAL_SRC) $(COMMON_HEADER) $(STRASSEN_UTILS_HEADER) $(STRASSEN_UTILS_SRC)
+	@echo "Compiling sequential implementation with Strassen algorithm..."
+	$(CC) $(CFLAGS) -o $@ $(SEQUENTIAL_SRC) $(STRASSEN_UTILS_SRC) $(MATH_FLAGS)
 
-# Parallel row implementation
-$(PARALLEL_ROW_EXE): $(PARALLEL_ROW_SRC) $(COMMON_HEADER)
-	@echo "Compiling parallel row implementation..."
-	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $@ $<
+# Parallel row implementation with Strassen
+$(PARALLEL_ROW_EXE): $(PARALLEL_ROW_SRC) $(COMMON_HEADER) $(STRASSEN_UTILS_HEADER) $(STRASSEN_UTILS_SRC)
+	@echo "Compiling parallel row implementation with Strassen algorithm..."
+	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $@ $(PARALLEL_ROW_SRC) $(STRASSEN_UTILS_SRC) $(MATH_FLAGS)
 
-# Parallel element implementation
-$(PARALLEL_ELEMENT_EXE): $(PARALLEL_ELEMENT_SRC) $(COMMON_HEADER)
-	@echo "Compiling parallel element implementation..."
-	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $@ $<
+# Parallel element implementation with Strassen
+$(PARALLEL_ELEMENT_EXE): $(PARALLEL_ELEMENT_SRC) $(COMMON_HEADER) $(STRASSEN_UTILS_HEADER) $(STRASSEN_UTILS_SRC)
+	@echo "Compiling parallel element implementation with Strassen algorithm..."
+	$(CC) $(CFLAGS) $(PTHREAD_FLAGS) -o $@ $(PARALLEL_ELEMENT_SRC) $(STRASSEN_UTILS_SRC) $(MATH_FLAGS)
 
 # Create directories
 $(COMPILED_DIR):
@@ -48,9 +51,9 @@ $(COMPILED_DIR):
 $(SCRIPTS_DIR):
 	mkdir -p $(SCRIPTS_DIR)
 
-# Organize scripts (scripts already in scripts/ directory)
+# Organize scripts (scripts already in tools/ directory)
 organize-scripts: $(SCRIPTS_DIR)
-	@echo "Scripts are already organized in scripts/ directory"
+	@echo "Scripts are already organized in tools/ directory"
 
 # Quick test
 test: all

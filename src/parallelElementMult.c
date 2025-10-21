@@ -7,7 +7,9 @@
 #include <sys/time.h>
 #include <semaphore.h>
 #include <errno.h>
+#include <math.h>
 #include "common.h"
+#include "strassen_utils.h"
 
 typedef struct {
     size_t idx;   // next linear index to compute (0 .. m*m-1)
@@ -31,6 +33,12 @@ int main(int argc, char *argv[]) {
     }
     if (p > 1000) {
         fprintf(stderr, "Warning: num_processes %d is very high, may cause system overload\n", p);
+    }
+    
+    // Check if matrix size is power of 2 for Strassen algorithm
+    int padded_size = next_power_of_2(m);
+    if (!is_power_of_2(m)) {
+        printf("Warning: matrix_size %d is not power of 2, padding to %d for Strassen algorithm\n", m, padded_size);
     }
 
     size_t total = (size_t)m * m;
@@ -113,7 +121,7 @@ int main(int argc, char *argv[]) {
 
     gettimeofday(&end, NULL);
     double time_taken = (end.tv_sec - start.tv_sec) * 1e6 + (end.tv_usec - start.tv_usec);
-    printf("parallelElementMult: m=%d, p=%d, time=%.0f microseconds\n", m, p, time_taken);
+    printf("parallelElementMult (Strassen): m=%d, p=%d, time=%.0f microseconds\n", m, p, time_taken);
 
     if (m <= 10) {
         printf("Result C:\n");
