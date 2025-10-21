@@ -145,10 +145,8 @@ plt.style.use('seaborn-v0_8')  # hoặc 'default', 'ggplot', etc.
 
 ## 📞 Liên hệ
 
-**Nhóm nghiên cứu:**
-- **Phan Văn Tài (2202081)**: Implementation & Testing
-- **Hà Minh Chiến (2202095)**: Analysis & Documentation
+**Thành viên nhóm **
+- **Phan Văn Tài (2202081)**
+- **Hà Minh Chiến (2202095)**
 
----
 
-*Tài liệu này mô tả hệ thống trực quan hóa hiệu suất Strassen Algorithm. Xem các file Python để biết chi tiết implementation.*

@@ -149,15 +149,10 @@ Matrix Size | Optimal Processes | Speedup | Efficiency
 - **512×512**: ~2.68x speedup with 10 processes
 - **1024×1024**: ~1.67x speedup with 1000 processes
 
-## 📞 CONTACT
+## CONTACT
 
-**Nhóm nghiên cứu:**
-- **Phan Văn Tài (2202081)**: Implementation & Testing
-- **Hà Minh Chiến (2202095)**: Analysis & Documentation
-
-**Liên hệ**: [Email] | [GitHub]  
-**Ngày hoàn thành**: 21/10/2025
+**Thành viên nhóm**
+- **Phan Văn Tài (2202081)**
+- **Hà Minh Chiến (2202095)**
 
 ---
-
-*Đây là tóm tắt nhanh của toàn bộ nghiên cứu. Xem FINAL_REPORT.md và PERFORMANCE_REPORT.md để biết chi tiết.*

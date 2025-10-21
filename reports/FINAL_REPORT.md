@@ -1,9 +1,7 @@
 # BÁO CÁO TỔNG HỢP - HIỆU SUẤT NHÂN MA TRẬN SONG SONG VỚI STRASSEN ALGORITHM
 
 **CS401V - Distributed Systems Assignment 1**  
-**Nhóm**: Phan Văn Tài (2202081) & Hà Minh Chiến (2202095)  
-**Ngày**: 21/10/2025  
-**Phiên bản**: 1.0
+**Nhóm**: Phan Văn Tài (2202081) & Hà Minh Chiến (2202095)   
 
 ---
 
@@ -133,9 +131,8 @@ Nghiên cứu và so sánh hiệu suất của **Strassen Algorithm** trong vi�
 
 ---
 
-**Thông tin nhóm:**
-- **Phan Văn Tài (2202081)**: Implementation & Testing
-- **Hà Minh Chiến (2202095)**: Analysis & Documentation
+**Thành viên nhóm **
+- **Phan Văn Tài (2202081)**
+- **Hà Minh Chiến (2202095)**
 
-**Liên hệ**: [Email nhóm] | [GitHub Repository]  
-**Ngày hoàn thành**: 21/10/2025
+

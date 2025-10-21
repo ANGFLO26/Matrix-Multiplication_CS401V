@@ -250,9 +250,3 @@ for (int i = 0; i < num_processes; i++) {
 4. **Compilation errors**: Verify GCC version và library dependencies
 
 ---
-
-**Thông tin kỹ thuật:**
-- **Implementation**: Phan Văn Tài (2202081)
-- **Analysis**: Hà Minh Chiến (2202095)
-- **Testing**: Cả hai thành viên
-- **Documentation**: Hà Minh Chiến (2202095)

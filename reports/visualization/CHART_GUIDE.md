@@ -47,19 +47,18 @@ Dự án này bao gồm **7 biểu đồ cốt lõi** để phân tích hiệu s
 ## **🎯 CÁCH SỬ DỤNG BIỂU ĐỒ**
 
 ### **Cho Báo cáo Kỹ thuật:**
-- Sử dụng biểu đồ 1-8 cho phân tích cơ bản
-- Biểu đồ 9, 11, 15 cho phân tích algorithm
-- Biểu đồ 10, 14 cho phân tích system
+- Sử dụng biểu đồ 1-4 cho phân tích cơ bản
+- Biểu đồ 9, 11, 13 cho phân tích algorithm
 
 ### **Cho Presentation:**
 - Biểu đồ 1, 3, 4, 13 cho overview
-- Biểu đồ 2, 5, 12 cho optimization
-- Biểu đồ 6, 7, 8, 14 cho bottleneck analysis
+- Biểu đồ 2, 4 cho optimization
+- Biểu đồ 9, 11 cho bottleneck analysis
 
 ### **Cho Research Paper:**
-- Tất cả 15 biểu đồ cho comprehensive analysis
-- Biểu đồ 9, 11, 15 cho theoretical validation
-- Biểu đồ 1-8 cho experimental results
+- Tất cả 7 biểu đồ cho comprehensive analysis
+- Biểu đồ 9, 11, 13 cho theoretical validation
+- Biểu đồ 1-4 cho experimental results
 
 ---
 
@@ -79,21 +78,14 @@ reports/visualization/
     ├── speedup_data.csv              # Dữ liệu speedup
     └── speedup_data.json             # Dữ liệu speedup (JSON)
 
-reports/charts/                        # Biểu đồ chính
+reports/charts/                        # Biểu đồ chính (7 files)
 ├── 01_speedup_vs_matrix_size.png
 ├── 02_speedup_vs_process_count.png
 ├── 03_row_vs_element_comparison.png
 ├── 04_efficiency_heatmap.png
-├── 05_optimal_process_analysis.png
-├── 07_memory_usage_analysis.png
-├── 08_overhead_analysis.png
 ├── 09_algorithm_complexity.png
-├── 10_performance_per_core.png
 ├── 11_scalability_analysis.png
-├── 12_cost_benefit_analysis.png
-├── 13_3d_performance_surface.png
-├── 14_resource_utilization.png
-└── 15_performance_regression.png
+└── 13_3d_performance_surface.png
 ```
 
 ---
@@ -103,8 +95,8 @@ reports/charts/                        # Biểu đồ chính
 ### **Tạo tất cả biểu đồ:**
 ```bash
 cd reports/visualization/code
-python3 generate_charts.py              # Biểu đồ 1-8
-python3 generate_additional_charts.py   # Biểu đồ 9-15
+python3 generate_charts.py              # Biểu đồ 1-4
+python3 generate_additional_charts.py   # Biểu đồ 9, 11, 13
 ```
 
 ### **Tạo biểu đồ riêng lẻ:**
@@ -141,7 +133,7 @@ Chỉnh sửa script để chỉ tạo biểu đồ cần thiết.
 4. **Memory usage** tăng theo O(n²)
 5. **Overhead** tăng với số process cao
 6. **3D surface** cho thấy vùng tối ưu rõ ràng
-7. **Cost-benefit** analysis giúp tìm sweet spot
+7. **Efficiency heatmap** giúp tìm sweet spot
 
 ---
 
