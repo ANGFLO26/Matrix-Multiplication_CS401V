@@ -1,0 +1,2698 @@
+[
+  {
+    "matrix_size": 4,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 359,
+    "time_seconds": 0.000359,
+    "source": "original"
+  },
+  {
+    "matrix_size": 4,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 3547,
+    "time_seconds": 0.003547,
+    "source": "original"
+  },
+  {
+    "matrix_size": 4,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 32087,
+    "time_seconds": 0.032087,
+    "source": "original"
+  },
+  {
+    "matrix_size": 4,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 389,
+    "time_seconds": 0.000389,
+    "source": "original"
+  },
+  {
+    "matrix_size": 4,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 3320,
+    "time_seconds": 0.00332,
+    "source": "original"
+  },
+  {
+    "matrix_size": 4,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 34698,
+    "time_seconds": 0.034698,
+    "source": "original"
+  },
+  {
+    "matrix_size": 8,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 1,
+    "time_seconds": 1e-06,
+    "source": "original"
+  },
+  {
+    "matrix_size": 8,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 396,
+    "time_seconds": 0.000396,
+    "source": "original"
+  },
+  {
+    "matrix_size": 8,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 3992,
+    "time_seconds": 0.003992,
+    "source": "original"
+  },
+  {
+    "matrix_size": 8,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 34960,
+    "time_seconds": 0.03496,
+    "source": "original"
+  },
+  {
+    "matrix_size": 8,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 405,
+    "time_seconds": 0.000405,
+    "source": "original"
+  },
+  {
+    "matrix_size": 8,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 4255,
+    "time_seconds": 0.004255,
+    "source": "original"
+  },
+  {
+    "matrix_size": 8,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 38334,
+    "time_seconds": 0.038334,
+    "source": "original"
+  },
+  {
+    "matrix_size": 16,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 2,
+    "time_seconds": 2e-06,
+    "source": "original"
+  },
+  {
+    "matrix_size": 16,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 398,
+    "time_seconds": 0.000398,
+    "source": "original"
+  },
+  {
+    "matrix_size": 16,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 4676,
+    "time_seconds": 0.004676,
+    "source": "original"
+  },
+  {
+    "matrix_size": 16,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 38332,
+    "time_seconds": 0.038332,
+    "source": "original"
+  },
+  {
+    "matrix_size": 16,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 364,
+    "time_seconds": 0.000364,
+    "source": "original"
+  },
+  {
+    "matrix_size": 16,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 4817,
+    "time_seconds": 0.004817,
+    "source": "original"
+  },
+  {
+    "matrix_size": 16,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 35310,
+    "time_seconds": 0.03531,
+    "source": "original"
+  },
+  {
+    "matrix_size": 32,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 16,
+    "time_seconds": 1.6e-05,
+    "source": "original"
+  },
+  {
+    "matrix_size": 32,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 381,
+    "time_seconds": 0.000381,
+    "source": "original"
+  },
+  {
+    "matrix_size": 32,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 4246,
+    "time_seconds": 0.004246,
+    "source": "original"
+  },
+  {
+    "matrix_size": 32,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 33757,
+    "time_seconds": 0.033757,
+    "source": "original"
+  },
+  {
+    "matrix_size": 32,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 390,
+    "time_seconds": 0.00039,
+    "source": "original"
+  },
+  {
+    "matrix_size": 32,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 3371,
+    "time_seconds": 0.003371,
+    "source": "original"
+  },
+  {
+    "matrix_size": 32,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 41433,
+    "time_seconds": 0.041433,
+    "source": "original"
+  },
+  {
+    "matrix_size": 64,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 161,
+    "time_seconds": 0.000161,
+    "source": "original"
+  },
+  {
+    "matrix_size": 64,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 412,
+    "time_seconds": 0.000412,
+    "source": "original"
+  },
+  {
+    "matrix_size": 64,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 3193,
+    "time_seconds": 0.003193,
+    "source": "original"
+  },
+  {
+    "matrix_size": 64,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 36709,
+    "time_seconds": 0.036709,
+    "source": "original"
+  },
+  {
+    "matrix_size": 64,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 873,
+    "time_seconds": 0.000873,
+    "source": "original"
+  },
+  {
+    "matrix_size": 64,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 3632,
+    "time_seconds": 0.003632,
+    "source": "original"
+  },
+  {
+    "matrix_size": 64,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 33897,
+    "time_seconds": 0.033897,
+    "source": "original"
+  },
+  {
+    "matrix_size": 128,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 1473,
+    "time_seconds": 0.001473,
+    "source": "original"
+  },
+  {
+    "matrix_size": 128,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 628,
+    "time_seconds": 0.000628,
+    "source": "original"
+  },
+  {
+    "matrix_size": 128,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 3484,
+    "time_seconds": 0.003484,
+    "source": "original"
+  },
+  {
+    "matrix_size": 128,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 35832,
+    "time_seconds": 0.035832,
+    "source": "original"
+  },
+  {
+    "matrix_size": 128,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 3513,
+    "time_seconds": 0.003513,
+    "source": "original"
+  },
+  {
+    "matrix_size": 128,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 5286,
+    "time_seconds": 0.005286,
+    "source": "original"
+  },
+  {
+    "matrix_size": 128,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 37220,
+    "time_seconds": 0.03722,
+    "source": "original"
+  },
+  {
+    "matrix_size": 256,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 11463,
+    "time_seconds": 0.011463,
+    "source": "original"
+  },
+  {
+    "matrix_size": 256,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 2352,
+    "time_seconds": 0.002352,
+    "source": "original"
+  },
+  {
+    "matrix_size": 256,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 5208,
+    "time_seconds": 0.005208,
+    "source": "original"
+  },
+  {
+    "matrix_size": 256,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 36187,
+    "time_seconds": 0.036187,
+    "source": "original"
+  },
+  {
+    "matrix_size": 256,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 13674,
+    "time_seconds": 0.013674,
+    "source": "original"
+  },
+  {
+    "matrix_size": 256,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 14842,
+    "time_seconds": 0.014842,
+    "source": "original"
+  },
+  {
+    "matrix_size": 256,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 44483,
+    "time_seconds": 0.044483,
+    "source": "original"
+  },
+  {
+    "matrix_size": 512,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 75109,
+    "time_seconds": 0.075109,
+    "source": "original"
+  },
+  {
+    "matrix_size": 512,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 28016,
+    "time_seconds": 0.028016,
+    "source": "original"
+  },
+  {
+    "matrix_size": 512,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 29359,
+    "time_seconds": 0.029359,
+    "source": "original"
+  },
+  {
+    "matrix_size": 512,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 57417,
+    "time_seconds": 0.057417,
+    "source": "original"
+  },
+  {
+    "matrix_size": 512,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 62455,
+    "time_seconds": 0.062455,
+    "source": "original"
+  },
+  {
+    "matrix_size": 512,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 69295,
+    "time_seconds": 0.069295,
+    "source": "original"
+  },
+  {
+    "matrix_size": 512,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 95762,
+    "time_seconds": 0.095762,
+    "source": "original"
+  },
+  {
+    "matrix_size": 1024,
+    "process_count": 1000,
+    "method": "sequential",
+    "time_microseconds": 540443,
+    "time_seconds": 0.540443,
+    "source": "original"
+  },
+  {
+    "matrix_size": 1024,
+    "process_count": 10,
+    "method": "parallel_row",
+    "time_microseconds": 648490,
+    "time_seconds": 0.64849,
+    "source": "original"
+  },
+  {
+    "matrix_size": 1024,
+    "process_count": 100,
+    "method": "parallel_row",
+    "time_microseconds": 397029,
+    "time_seconds": 0.397029,
+    "source": "original"
+  },
+  {
+    "matrix_size": 1024,
+    "process_count": 1000,
+    "method": "parallel_row",
+    "time_microseconds": 323885,
+    "time_seconds": 0.323885,
+    "source": "original"
+  },
+  {
+    "matrix_size": 1024,
+    "process_count": 10,
+    "method": "parallel_element",
+    "time_microseconds": 472776,
+    "time_seconds": 0.472776,
+    "source": "original"
+  },
+  {
+    "matrix_size": 1024,
+    "process_count": 100,
+    "method": "parallel_element",
+    "time_microseconds": 613917,
+    "time_seconds": 0.613917,
+    "source": "original"
+  },
+  {
+    "matrix_size": 1024,
+    "process_count": 1000,
+    "method": "parallel_element",
+    "time_microseconds": 867893,
+    "time_seconds": 0.867893,
+    "source": "original"
+  },
+  {
+    "matrix_size": 2,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 123,
+    "time_seconds": 0.000123,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 103,
+    "time_seconds": 0.000103,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 172,
+    "time_seconds": 0.000172,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 123,
+    "time_seconds": 0.000123,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3,
+    "process_count": 2,
+    "method": "sequential",
+    "time_microseconds": 1,
+    "time_seconds": 1e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 111,
+    "time_seconds": 0.000111,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 140,
+    "time_seconds": 0.00014,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 153,
+    "time_seconds": 0.000153,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 140,
+    "time_seconds": 0.00014,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5,
+    "process_count": 2,
+    "method": "sequential",
+    "time_microseconds": 2,
+    "time_seconds": 2e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 117,
+    "time_seconds": 0.000117,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 108,
+    "time_seconds": 0.000108,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 156,
+    "time_seconds": 0.000156,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 141,
+    "time_seconds": 0.000141,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5,
+    "process_count": 4,
+    "method": "parallel_row",
+    "time_microseconds": 264,
+    "time_seconds": 0.000264,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5,
+    "process_count": 4,
+    "method": "parallel_element",
+    "time_microseconds": 198,
+    "time_seconds": 0.000198,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6,
+    "process_count": 4,
+    "method": "sequential",
+    "time_microseconds": 1,
+    "time_seconds": 1e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 141,
+    "time_seconds": 0.000141,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 132,
+    "time_seconds": 0.000132,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 161,
+    "time_seconds": 0.000161,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 138,
+    "time_seconds": 0.000138,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6,
+    "process_count": 4,
+    "method": "parallel_row",
+    "time_microseconds": 516,
+    "time_seconds": 0.000516,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6,
+    "process_count": 4,
+    "method": "parallel_element",
+    "time_microseconds": 277,
+    "time_seconds": 0.000277,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 7,
+    "process_count": 4,
+    "method": "sequential",
+    "time_microseconds": 1,
+    "time_seconds": 1e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 7,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 90,
+    "time_seconds": 9e-05,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 7,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 119,
+    "time_seconds": 0.000119,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 7,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 142,
+    "time_seconds": 0.000142,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 7,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 152,
+    "time_seconds": 0.000152,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 7,
+    "process_count": 4,
+    "method": "parallel_row",
+    "time_microseconds": 222,
+    "time_seconds": 0.000222,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 7,
+    "process_count": 4,
+    "method": "parallel_element",
+    "time_microseconds": 213,
+    "time_seconds": 0.000213,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 4,
+    "method": "sequential",
+    "time_microseconds": 5,
+    "time_seconds": 5e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 115,
+    "time_seconds": 0.000115,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 123,
+    "time_seconds": 0.000123,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 147,
+    "time_seconds": 0.000147,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 190,
+    "time_seconds": 0.00019,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 4,
+    "method": "parallel_row",
+    "time_microseconds": 222,
+    "time_seconds": 0.000222,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 4,
+    "method": "parallel_element",
+    "time_microseconds": 236,
+    "time_seconds": 0.000236,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 400,
+    "time_seconds": 0.0004,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 9,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 368,
+    "time_seconds": 0.000368,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 8,
+    "method": "sequential",
+    "time_microseconds": 5,
+    "time_seconds": 5e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 93,
+    "time_seconds": 9.3e-05,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 119,
+    "time_seconds": 0.000119,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 130,
+    "time_seconds": 0.00013,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 154,
+    "time_seconds": 0.000154,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 4,
+    "method": "parallel_row",
+    "time_microseconds": 249,
+    "time_seconds": 0.000249,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 4,
+    "method": "parallel_element",
+    "time_microseconds": 219,
+    "time_seconds": 0.000219,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 315,
+    "time_seconds": 0.000315,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 10,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 340,
+    "time_seconds": 0.00034,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 8,
+    "method": "sequential",
+    "time_microseconds": 4,
+    "time_seconds": 4e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 106,
+    "time_seconds": 0.000106,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 130,
+    "time_seconds": 0.00013,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 139,
+    "time_seconds": 0.000139,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 157,
+    "time_seconds": 0.000157,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 4,
+    "method": "parallel_row",
+    "time_microseconds": 247,
+    "time_seconds": 0.000247,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 4,
+    "method": "parallel_element",
+    "time_microseconds": 207,
+    "time_seconds": 0.000207,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 315,
+    "time_seconds": 0.000315,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 12,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 349,
+    "time_seconds": 0.000349,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 8,
+    "method": "sequential",
+    "time_microseconds": 5,
+    "time_seconds": 5e-06,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 1,
+    "method": "parallel_row",
+    "time_microseconds": 119,
+    "time_seconds": 0.000119,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 1,
+    "method": "parallel_element",
+    "time_microseconds": 101,
+    "time_seconds": 0.000101,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 2,
+    "method": "parallel_row",
+    "time_microseconds": 176,
+    "time_seconds": 0.000176,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 2,
+    "method": "parallel_element",
+    "time_microseconds": 124,
+    "time_seconds": 0.000124,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 4,
+    "method": "parallel_row",
+    "time_microseconds": 236,
+    "time_seconds": 0.000236,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 4,
+    "method": "parallel_element",
+    "time_microseconds": 213,
+    "time_seconds": 0.000213,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 357,
+    "time_seconds": 0.000357,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 15,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 319,
+    "time_seconds": 0.000319,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 24,
+    "process_count": 1,
+    "method": "sequential",
+    "time_microseconds": 34,
+    "time_seconds": 3.4e-05,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 24,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 465,
+    "time_seconds": 0.000465,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 24,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 737,
+    "time_seconds": 0.000737,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 24,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 1258,
+    "time_seconds": 0.001258,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 24,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 611,
+    "time_seconds": 0.000611,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 48,
+    "process_count": 16,
+    "method": "sequential",
+    "time_microseconds": 252,
+    "time_seconds": 0.000252,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 48,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 433,
+    "time_seconds": 0.000433,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 48,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 2390,
+    "time_seconds": 0.00239,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 48,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 758,
+    "time_seconds": 0.000758,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 48,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 1609,
+    "time_seconds": 0.001609,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 48,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 1399,
+    "time_seconds": 0.001399,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 48,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 1521,
+    "time_seconds": 0.001521,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 32,
+    "method": "sequential",
+    "time_microseconds": 1488,
+    "time_seconds": 0.001488,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 413,
+    "time_seconds": 0.000413,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 1952,
+    "time_seconds": 0.001952,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 4484,
+    "time_seconds": 0.004484,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 1874,
+    "time_seconds": 0.001874,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 1120,
+    "time_seconds": 0.00112,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 1996,
+    "time_seconds": 0.001996,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 2664,
+    "time_seconds": 0.002664,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 96,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 3929,
+    "time_seconds": 0.003929,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 64,
+    "method": "sequential",
+    "time_microseconds": 11183,
+    "time_seconds": 0.011183,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 1199,
+    "time_seconds": 0.001199,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 7446,
+    "time_seconds": 0.007446,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 1227,
+    "time_seconds": 0.001227,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 7910,
+    "time_seconds": 0.00791,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 1348,
+    "time_seconds": 0.001348,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 8270,
+    "time_seconds": 0.00827,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 3314,
+    "time_seconds": 0.003314,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 11332,
+    "time_seconds": 0.011332,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 7935,
+    "time_seconds": 0.007935,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 9915,
+    "time_seconds": 0.009915,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 9567,
+    "time_seconds": 0.009567,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 192,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 15157,
+    "time_seconds": 0.015157,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 256,
+    "method": "sequential",
+    "time_microseconds": 79516,
+    "time_seconds": 0.079516,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 5288,
+    "time_seconds": 0.005288,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 20727,
+    "time_seconds": 0.020727,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 4669,
+    "time_seconds": 0.004669,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 22299,
+    "time_seconds": 0.022299,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 4770,
+    "time_seconds": 0.00477,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 22475,
+    "time_seconds": 0.022475,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 5040,
+    "time_seconds": 0.00504,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 22953,
+    "time_seconds": 0.022953,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 7462,
+    "time_seconds": 0.007462,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 22979,
+    "time_seconds": 0.022979,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 11549,
+    "time_seconds": 0.011549,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 320,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 23818,
+    "time_seconds": 0.023818,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 256,
+    "method": "sequential",
+    "time_microseconds": 76172,
+    "time_seconds": 0.076172,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 14105,
+    "time_seconds": 0.014105,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 41150,
+    "time_seconds": 0.04115,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 12895,
+    "time_seconds": 0.012895,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 43218,
+    "time_seconds": 0.043218,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 11987,
+    "time_seconds": 0.011987,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 44642,
+    "time_seconds": 0.044642,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 12442,
+    "time_seconds": 0.012442,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 43221,
+    "time_seconds": 0.043221,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 15462,
+    "time_seconds": 0.015462,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 46157,
+    "time_seconds": 0.046157,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 19220,
+    "time_seconds": 0.01922,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 448,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 50256,
+    "time_seconds": 0.050256,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 256,
+    "method": "sequential",
+    "time_microseconds": 499529,
+    "time_seconds": 0.499529,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 29544,
+    "time_seconds": 0.029544,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 100947,
+    "time_seconds": 0.100947,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 25365,
+    "time_seconds": 0.025365,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 73156,
+    "time_seconds": 0.073156,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 26907,
+    "time_seconds": 0.026907,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 77578,
+    "time_seconds": 0.077578,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 25248,
+    "time_seconds": 0.025248,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 77687,
+    "time_seconds": 0.077687,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 26305,
+    "time_seconds": 0.026305,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 74040,
+    "time_seconds": 0.07404,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 32654,
+    "time_seconds": 0.032654,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 576,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 80799,
+    "time_seconds": 0.080799,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 256,
+    "method": "sequential",
+    "time_microseconds": 499500,
+    "time_seconds": 0.4995,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 60454,
+    "time_seconds": 0.060454,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 188126,
+    "time_seconds": 0.188126,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 51684,
+    "time_seconds": 0.051684,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 190972,
+    "time_seconds": 0.190972,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 50767,
+    "time_seconds": 0.050767,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 170420,
+    "time_seconds": 0.17042,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 49227,
+    "time_seconds": 0.049227,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 138868,
+    "time_seconds": 0.138868,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 48365,
+    "time_seconds": 0.048365,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 158019,
+    "time_seconds": 0.158019,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 53299,
+    "time_seconds": 0.053299,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 704,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 150550,
+    "time_seconds": 0.15055,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 256,
+    "method": "sequential",
+    "time_microseconds": 510949,
+    "time_seconds": 0.510949,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 99386,
+    "time_seconds": 0.099386,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 190398,
+    "time_seconds": 0.190398,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 78114,
+    "time_seconds": 0.078114,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 303251,
+    "time_seconds": 0.303251,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 79299,
+    "time_seconds": 0.079299,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 315418,
+    "time_seconds": 0.315418,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 78076,
+    "time_seconds": 0.078076,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 266481,
+    "time_seconds": 0.266481,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 82307,
+    "time_seconds": 0.082307,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 287357,
+    "time_seconds": 0.287357,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 82203,
+    "time_seconds": 0.082203,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 832,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 286668,
+    "time_seconds": 0.286668,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 256,
+    "method": "sequential",
+    "time_microseconds": 573245,
+    "time_seconds": 0.573245,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 8,
+    "method": "parallel_row",
+    "time_microseconds": 167788,
+    "time_seconds": 0.167788,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 8,
+    "method": "parallel_element",
+    "time_microseconds": 495041,
+    "time_seconds": 0.495041,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 16,
+    "method": "parallel_row",
+    "time_microseconds": 182925,
+    "time_seconds": 0.182925,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 16,
+    "method": "parallel_element",
+    "time_microseconds": 620610,
+    "time_seconds": 0.62061,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 157277,
+    "time_seconds": 0.157277,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 522523,
+    "time_seconds": 0.522523,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 176273,
+    "time_seconds": 0.176273,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 528370,
+    "time_seconds": 0.52837,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 147945,
+    "time_seconds": 0.147945,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 515184,
+    "time_seconds": 0.515184,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 157753,
+    "time_seconds": 0.157753,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 960,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 491871,
+    "time_seconds": 0.491871,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 6497436,
+    "time_seconds": 6.497436,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 4312832,
+    "time_seconds": 4.312832,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 4478339,
+    "time_seconds": 4.478339,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 3410603,
+    "time_seconds": 3.410603,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 2900964,
+    "time_seconds": 2.900964,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 3521744,
+    "time_seconds": 3.521744,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 3288670,
+    "time_seconds": 3.28867,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 3470682,
+    "time_seconds": 3.470682,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 512,
+    "method": "parallel_row",
+    "time_microseconds": 2874655,
+    "time_seconds": 2.874655,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 3967008,
+    "time_seconds": 3.967008,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 768,
+    "method": "parallel_row",
+    "time_microseconds": 3440820,
+    "time_seconds": 3.44082,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 3442705,
+    "time_seconds": 3.442705,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 1024,
+    "method": "parallel_row",
+    "time_microseconds": 2802124,
+    "time_seconds": 2.802124,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 1536,
+    "process_count": 1024,
+    "method": "parallel_element",
+    "time_microseconds": 3450508,
+    "time_seconds": 3.450508,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 19886210,
+    "time_seconds": 19.88621,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 8832631,
+    "time_seconds": 8.832631,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 16032022,
+    "time_seconds": 16.032022,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 8903140,
+    "time_seconds": 8.90314,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 16973414,
+    "time_seconds": 16.973414,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 9073640,
+    "time_seconds": 9.07364,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 17113490,
+    "time_seconds": 17.11349,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 9111131,
+    "time_seconds": 9.111131,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 512,
+    "method": "parallel_row",
+    "time_microseconds": 16583025,
+    "time_seconds": 16.583025,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 9117425,
+    "time_seconds": 9.117425,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 768,
+    "method": "parallel_row",
+    "time_microseconds": 17083416,
+    "time_seconds": 17.083416,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 9146129,
+    "time_seconds": 9.146129,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 1024,
+    "method": "parallel_row",
+    "time_microseconds": 16039029,
+    "time_seconds": 16.039029,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2048,
+    "process_count": 1024,
+    "method": "parallel_element",
+    "time_microseconds": 9453516,
+    "time_seconds": 9.453516,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 44494299,
+    "time_seconds": 44.494299,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 18606580,
+    "time_seconds": 18.60658,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 43675176,
+    "time_seconds": 43.675176,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 18689768,
+    "time_seconds": 18.689768,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 47649538,
+    "time_seconds": 47.649538,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 18844870,
+    "time_seconds": 18.84487,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 47029266,
+    "time_seconds": 47.029266,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 18858802,
+    "time_seconds": 18.858802,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 512,
+    "method": "parallel_row",
+    "time_microseconds": 43255670,
+    "time_seconds": 43.25567,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 19100869,
+    "time_seconds": 19.100869,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 768,
+    "method": "parallel_row",
+    "time_microseconds": 44272474,
+    "time_seconds": 44.272474,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 19163984,
+    "time_seconds": 19.163984,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 1024,
+    "method": "parallel_row",
+    "time_microseconds": 46619479,
+    "time_seconds": 46.619479,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 2560,
+    "process_count": 1024,
+    "method": "parallel_element",
+    "time_microseconds": 19415324,
+    "time_seconds": 19.415324,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 107387253,
+    "time_seconds": 107.387253,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 36151244,
+    "time_seconds": 36.151244,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 101381357,
+    "time_seconds": 101.381357,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 36184337,
+    "time_seconds": 36.184337,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 103151615,
+    "time_seconds": 103.151615,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 35804267,
+    "time_seconds": 35.804267,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 102944612,
+    "time_seconds": 102.944612,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 36289441,
+    "time_seconds": 36.289441,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 512,
+    "method": "parallel_row",
+    "time_microseconds": 94310825,
+    "time_seconds": 94.310825,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 36623674,
+    "time_seconds": 36.623674,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 768,
+    "method": "parallel_row",
+    "time_microseconds": 93038291,
+    "time_seconds": 93.038291,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 36453347,
+    "time_seconds": 36.453347,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 1024,
+    "method": "parallel_row",
+    "time_microseconds": 105607371,
+    "time_seconds": 105.607371,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3072,
+    "process_count": 1024,
+    "method": "parallel_element",
+    "time_microseconds": 37184304,
+    "time_seconds": 37.184304,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 192199631,
+    "time_seconds": 192.199631,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 66308019,
+    "time_seconds": 66.308019,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 197469872,
+    "time_seconds": 197.469872,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 67782709,
+    "time_seconds": 67.782709,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 200744360,
+    "time_seconds": 200.74436,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 63006992,
+    "time_seconds": 63.006992,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 184201316,
+    "time_seconds": 184.201316,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 63463419,
+    "time_seconds": 63.463419,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 512,
+    "method": "parallel_row",
+    "time_microseconds": 171214931,
+    "time_seconds": 171.214931,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 63542871,
+    "time_seconds": 63.542871,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 768,
+    "method": "parallel_row",
+    "time_microseconds": 163045613,
+    "time_seconds": 163.045613,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 63668197,
+    "time_seconds": 63.668197,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 1024,
+    "method": "parallel_row",
+    "time_microseconds": 166435157,
+    "time_seconds": 166.435157,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 3584,
+    "process_count": 1024,
+    "method": "parallel_element",
+    "time_microseconds": 64057737,
+    "time_seconds": 64.057737,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 32,
+    "method": "parallel_row",
+    "time_microseconds": 318308501,
+    "time_seconds": 318.308501,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 32,
+    "method": "parallel_element",
+    "time_microseconds": 105613634,
+    "time_seconds": 105.613634,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 64,
+    "method": "parallel_row",
+    "time_microseconds": 308604818,
+    "time_seconds": 308.604818,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 106847616,
+    "time_seconds": 106.847616,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 128,
+    "method": "parallel_row",
+    "time_microseconds": 317470194,
+    "time_seconds": 317.470194,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 105498265,
+    "time_seconds": 105.498265,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 256,
+    "method": "parallel_row",
+    "time_microseconds": 296089603,
+    "time_seconds": 296.089603,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 108093991,
+    "time_seconds": 108.093991,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 512,
+    "method": "parallel_row",
+    "time_microseconds": 305147171,
+    "time_seconds": 305.147171,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 109221622,
+    "time_seconds": 109.221622,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 768,
+    "method": "parallel_row",
+    "time_microseconds": 295488058,
+    "time_seconds": 295.488058,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 108042496,
+    "time_seconds": 108.042496,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 1024,
+    "method": "parallel_row",
+    "time_microseconds": 277389021,
+    "time_seconds": 277.389021,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 4096,
+    "process_count": 1024,
+    "method": "parallel_element",
+    "time_microseconds": 110648361,
+    "time_seconds": 110.648361,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 324441519,
+    "time_seconds": 324.441519,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 333721658,
+    "time_seconds": 333.721658,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 324238928,
+    "time_seconds": 324.238928,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 325244661,
+    "time_seconds": 325.244661,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 303407157,
+    "time_seconds": 303.407157,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 1024,
+    "method": "parallel_element",
+    "time_microseconds": 371193994,
+    "time_seconds": 371.193994,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 1500,
+    "method": "parallel_element",
+    "time_microseconds": 355900250,
+    "time_seconds": 355.90025,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 5120,
+    "process_count": 2000,
+    "method": "parallel_element",
+    "time_microseconds": 299281979,
+    "time_seconds": 299.281979,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6144,
+    "process_count": 64,
+    "method": "parallel_element",
+    "time_microseconds": 579700688,
+    "time_seconds": 579.700688,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6144,
+    "process_count": 128,
+    "method": "parallel_element",
+    "time_microseconds": 572596001,
+    "time_seconds": 572.596001,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6144,
+    "process_count": 256,
+    "method": "parallel_element",
+    "time_microseconds": 596295610,
+    "time_seconds": 596.29561,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6144,
+    "process_count": 512,
+    "method": "parallel_element",
+    "time_microseconds": 547510183,
+    "time_seconds": 547.510183,
+    "source": "extended"
+  },
+  {
+    "matrix_size": 6144,
+    "process_count": 768,
+    "method": "parallel_element",
+    "time_microseconds": 572561201,
+    "time_seconds": 572.561201,
+    "source": "extended"
+  }
+]

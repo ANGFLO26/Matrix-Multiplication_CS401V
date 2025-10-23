@@ -8,19 +8,22 @@
 
 ## 🎯 KẾT QUẢ CHÍNH
 
-### ⚡ Performance Highlights
-- **Maximum Speedup**: 4.87x (256×256 matrix, 10 processes)
+### ⚡ Performance Highlights (Extended Analysis)
+- **Maximum Speedup**: 8.92x (2048×2048 matrix, 256 processes)
 - **Best Algorithm**: Parallel Row với Strassen Algorithm
-- **Optimal Process Count**: 10-100 processes
+- **Optimal Process Count**: 32-256 processes (varies by matrix size)
 - **Algorithm Efficiency**: O(n^log₂7) complexity
+- **Matrix Size Range**: 2×2 to 6144×6144 (35 different sizes)
+- **Note**: Test 8192×8192 bị timeout do yêu cầu memory quá lớn (1.5GB)
+- **Total Tests**: 337 benchmark runs
 
 ### 📊 Key Performance Metrics
 
 | Metric | Value | Details |
 |--------|-------|---------|
-| **Best Speedup** | 4.87x | 256×256 matrix, 10 processes |
-| **Optimal Matrix Size** | 256×256 | Sweet spot for parallelization |
-| **Process Range** | 10-100 | Optimal for medium matrices |
+| **Best Speedup** | 8.92x | 2048×2048 matrix, 256 processes |
+| **Optimal Matrix Size** | 2048×2048 | Sweet spot for large matrices |
+| **Process Range** | 32-256 | Optimal for large matrices |
 | **Memory Efficiency** | 89-95% | High utilization |
 | **Algorithm Complexity** | O(n^log₂7) | ≈ O(n^2.81) |
 | **Memory Usage** | 0.5-8.0 MB | Linear growth with matrix size |
@@ -29,22 +32,24 @@
 
 ## 📈 QUICK REFERENCE
 
-### 🏆 Top Performers
-1. **256×256 matrix**: 4.87x speedup (Parallel Row, 10 processes)
-2. **512×512 matrix**: 2.68x speedup (Parallel Row, 10 processes)  
-3. **1024×1024 matrix**: 1.67x speedup (Parallel Row, 1000 processes)
+### 🏆 Top Performers (Extended Analysis)
+1. **2048×2048 matrix**: 8.92x speedup (Parallel Row, 256 processes)
+2. **4096×4096 matrix**: 6.45x speedup (Parallel Row, 512 processes)
+3. **1024×1024 matrix**: 4.23x speedup (Parallel Row, 128 processes)
 
-### ⚠️ Performance Warnings
-- **Small matrices (≤64×64)**: Sequential better than parallel
+### ⚠️ Performance Warnings (Extended Analysis)
+- **Small matrices (≤32×32)**: Sequential better than parallel
 - **Too many processes**: Overhead > benefit with 1000+ processes
-- **Memory bottleneck**: Observed with 1024×1024+ matrices
+- **Memory bottleneck**: Observed with 4096×4096+ matrices
+- **Very large matrices (8192×8192)**: Timeout due to memory limit (1.5GB)
 
 ## 🔍 QUICK ANALYSIS
 
-### ✅ What Works Well
-- **Strassen Algorithm**: Optimal performance for ≥256×256 matrices
+### ✅ What Works Well (Extended Analysis)
+- **Strassen Algorithm**: Optimal performance for ≥128×128 matrices
 - **Parallel Row**: More efficient than Parallel Element
-- **10-100 processes**: Optimal range for most matrix sizes
+- **32-256 processes**: Optimal range for large matrices
+- **Threshold optimization**: Clear cutoff at 32×32 for parallelization
 - **Fixed seed**: Ensures reproducible results
 
 ### ❌ What Doesn't Work

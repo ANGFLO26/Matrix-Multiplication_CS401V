@@ -1,0 +1,37 @@
+# Requirements for Strassen Algorithm Matrix Multiplication Project
+# CS401V - Distributed Systems Assignment 1
+# Group: Phan Văn Tài (2202081) & Hà Minh Chiến (2202095)
+
+# System Requirements
+- Linux/Unix operating system
+- GCC compiler (version 4.9 or higher)
+- Make utility
+- Python 3.6+ (for visualization)
+- 8GB+ RAM (for large matrix tests)
+
+# C Dependencies
+- pthread library (for parallel processing)
+- math library (for Strassen algorithm)
+- mmap system call (for shared memory)
+
+# Python Dependencies (for visualization)
+- matplotlib>=3.0.0
+- numpy>=1.15.0
+
+# Optional Dependencies
+- tree (for directory visualization)
+- htop (for system monitoring)
+
+# Installation Commands
+# Ubuntu/Debian:
+# sudo apt-get install gcc make python3 python3-pip
+# pip3 install matplotlib numpy
+
+# CentOS/RHEL:
+# sudo yum install gcc make python3 python3-pip
+# pip3 install matplotlib numpy
+
+# Usage
+# 1. Compile: make
+# 2. Run tests: ./tools/extended_benchmark.sh
+# 3. Generate charts: cd reports/visualization/code && python3 generate_charts.py
