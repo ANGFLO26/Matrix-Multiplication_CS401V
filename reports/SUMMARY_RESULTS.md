@@ -134,9 +134,14 @@ Matrix Size | Optimal Processes | Speedup | Efficiency
 - **SUMMARY_RESULTS.md**: This quick reference
 
 ### 📊 Charts
-- **strassen_execution_time.png**: Time comparison
-- **strassen_speedup.png**: Speedup analysis
-- **strassen_process_analysis.png**: Process optimization
+- **01_speedup_vs_matrix_size.png**
+- **02_speedup_vs_process_count.png**
+- **03_row_vs_element_comparison.png**
+- **04_efficiency_heatmap.png**
+- **05_best_time_large.png**
+- **06_algorithm_complexity.png**
+- **07_scalability_analysis.png**
+- **08_3d_performance_surface.png**
 
 ### 📝 Data
 - **extended_benchmark_data.(csv|json)**: Dữ liệu mở rộng đến 6144

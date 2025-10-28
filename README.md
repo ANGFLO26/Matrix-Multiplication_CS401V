@@ -53,9 +53,11 @@ gcc src/parallelElementMult.c src/strassen_utils.c -o compiled/parallelElementMu
 ## 📊 Performance Results
 
 ### Key Findings (Strassen Algorithm)
-- **Best Performance**: Parallel Row with 10-100 processes for medium matrices
-- **Maximum Speedup**: 4.87x for 256×256 matrices with 10 processes
-- **Algorithm Efficiency**: O(n^log₂7) vs O(n³) for large matrices
+- **Medium (256–512)**: Parallel Row ~10–32 processes tốt nhất
+- **Maximum Speedup (≤1024)**: 4.87x tại 256×256 (Row, 10 processes)
+- **1024×1024**: Parallel Row 100–1000 processes
+- **Large (≥1536)**: Parallel Element thường cho thời gian tốt hơn (trừ 1536)
+- **Algorithm Efficiency**: O(n^log₂7) vs O(n³)
 
 ### Performance Summary (Strassen Algorithm)
 | Matrix Size | Sequential | Parallel Row (p=10) | Speedup | Parallel Row (p=100) | Speedup |
