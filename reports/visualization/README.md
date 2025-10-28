@@ -24,10 +24,10 @@ reports/visualization/
     ├── 02_speedup_vs_process_count.png
     ├── 03_row_vs_element_comparison.png
     ├── 04_efficiency_heatmap.png
-    ├── 06_best_time_large.png
-    ├── 09_algorithm_complexity.png
-    ├── 11_scalability_analysis.png
-    └── 13_3d_performance_surface.png
+    ├── 05_best_time_large.png
+    ├── 06_algorithm_complexity.png
+    ├── 07_scalability_analysis.png
+    └── 08_3d_performance_surface.png
 ```
 
 ## 📈 Các biểu đồ được tạo
@@ -61,22 +61,22 @@ reports/visualization/
 - **Y-axis**: Matrix size
 - **Color**: Speedup value
 
-### 6. **Best Time for Large Sizes** (`06_best_time_large.png`)
+### 5. **Best Time for Large Sizes** (`05_best_time_large.png`)
 - **Mục đích**: Thể hiện thời gian tốt nhất cho dải ≥1536, và phương pháp thắng (Row/Element)
 - **Loại**: Line + annotations
 - **X-axis**: Matrix size (≥1536)
 - **Y-axis**: Best time (s, log scale)
 - **Ghi chú**: Nhãn chú thích tại mỗi điểm nêu rõ phương pháp thắng
 
-### 9. **Algorithm Complexity** (`09_algorithm_complexity.png`)
+### 6. **Algorithm Complexity** (`06_algorithm_complexity.png`)
 - **Mục đích**: So sánh độ phức tạp lý thuyết (Naive vs Strassen) và hiệu năng thực tế (scaled)
 - **Loại**: Line chart (log-log)
 
-### 11. **Scalability Analysis** (`11_scalability_analysis.png`)
+### 7. **Scalability Analysis** (`07_scalability_analysis.png`)
 - **Mục đích**: Phân tích speedup, efficiency (%), throughput (ops/sec) theo kích thước và số tiến trình
 - **Loại**: 3 subplot (line)
 
-### 13. **3D Performance Surface** (`13_3d_performance_surface.png`)
+### 8. **3D Performance Surface** (`08_3d_performance_surface.png`)
 - **Mục đích**: Bề mặt 3D thể hiện speedup theo (size, processes)
 - **Loại**: 3D surface
 

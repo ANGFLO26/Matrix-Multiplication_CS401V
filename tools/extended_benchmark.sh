@@ -9,7 +9,9 @@
 # =============================================================================
 
 # Cấu hình
-LOG_DIR="reports/logs"
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+BUILD_DIR="$ROOT_DIR/compiled"
+LOG_DIR="$ROOT_DIR/reports/logs"
 TIMEOUT=600  # 10 phút timeout cho mỗi test
 MEMORY_LIMIT="8G"  # Giới hạn bộ nhớ
 
@@ -46,7 +48,7 @@ run_test() {
     fi
     
     # Chạy test với timeout
-    timeout $TIMEOUT ./compiled/${method} "$matrix_size" "$num_processes" 2>&1 | tee -a "$LOG_DIR/extended_${phase}.log"
+    timeout $TIMEOUT "$BUILD_DIR/${method}" "$matrix_size" "$num_processes" 2>&1 | tee -a "$LOG_DIR/extended_${phase}.log"
     local exit_code=$?
     
     if [ $exit_code -eq 124 ]; then
@@ -86,7 +88,7 @@ run_phase() {
         # Sequential test (chỉ cho matrix size nhỏ)
         if [[ "$matrix_size" -le 1024 ]]; then
             echo "1) Sequential:" | tee -a "$LOG_DIR/extended_${phase_name,,}.log"
-            timeout $TIMEOUT ./compiled/sequentialMult "$matrix_size" 2>&1 | tee -a "$LOG_DIR/extended_${phase_name,,}.log"
+            timeout $TIMEOUT "$BUILD_DIR/sequentialMult" "$matrix_size" 2>&1 | tee -a "$LOG_DIR/extended_${phase_name,,}.log"
         else
             echo "1) Sequential: SKIP (matrix size too large)" | tee -a "$LOG_DIR/extended_${phase_name,,}.log"
         fi

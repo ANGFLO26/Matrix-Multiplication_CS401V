@@ -7,13 +7,13 @@ echo "=========================================="
 echo "Date: $(date)"
 echo ""
 
-# Compile if needed
-if [ ! -f "sequentialMult" ] || [ ! -f "parallelRowMult" ] || [ ! -f "parallelElementMult" ]; then
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+BUILD_DIR="$ROOT_DIR/compiled"
+if [ ! -f "$BUILD_DIR/sequentialMult" ] || [ ! -f "$BUILD_DIR/parallelRowMult" ] || [ ! -f "$BUILD_DIR/parallelElementMult" ]; then
     echo "Compiling programs..."
-    gcc sequentialMult.c -o sequentialMult
-    gcc parallelRowMult.c -o parallelRowMult -pthread
-    gcc parallelElementMult.c -o parallelElementMult -pthread
-    echo "Compilation completed!"
+    make -C "$ROOT_DIR" clean >/dev/null 2>&1 || true
+    make -C "$ROOT_DIR" >/dev/null
+    echo "Compilation completed at $BUILD_DIR!"
     echo ""
 fi
 
@@ -22,9 +22,9 @@ run_test() {
     local size=$1
     local procs=$2
     echo "Matrix Size: $size"
-    echo "Sequential: $(./sequentialMult $size 2>&1 | grep 'time=' | awk '{print $NF}')"
-    echo "Parallel Row ($procs procs): $(./parallelRowMult $size $procs 2>&1 | grep 'time=' | awk '{print $NF}')"
-    echo "Parallel Element ($procs procs): $(./parallelElementMult $size $procs 2>&1 | grep 'time=' | awk '{print $NF}')"
+    echo "Sequential: $($BUILD_DIR/sequentialMult $size 2>&1 | grep 'time=' | awk '{print $NF}')"
+    echo "Parallel Row ($procs procs): $($BUILD_DIR/parallelRowMult $size $procs 2>&1 | grep 'time=' | awk '{print $NF}')"
+    echo "Parallel Element ($procs procs): $($BUILD_DIR/parallelElementMult $size $procs 2>&1 | grep 'time=' | awk '{print $NF}')"
     echo ""
 }
 
@@ -40,9 +40,9 @@ run_test 1000 10
 
 echo "=== Test 4: Large Matrix with More Processes (1000x1000, 100 procs) ==="
 echo "Matrix Size: 1000"
-echo "Sequential: $(./sequentialMult 1000 2>&1 | grep 'time=' | awk '{print $NF}')"
-echo "Parallel Row (100 procs): $(./parallelRowMult 1000 100 2>&1 | grep 'time=' | awk '{print $NF}')"
-echo "Parallel Element (100 procs): $(./parallelElementMult 1000 100 2>&1 | grep 'time=' | awk '{print $NF}')"
+echo "Sequential: $($BUILD_DIR/sequentialMult 1000 2>&1 | grep 'time=' | awk '{print $NF}')"
+echo "Parallel Row (100 procs): $($BUILD_DIR/parallelRowMult 1000 100 2>&1 | grep 'time=' | awk '{print $NF}')"
+echo "Parallel Element (100 procs): $($BUILD_DIR/parallelElementMult 1000 100 2>&1 | grep 'time=' | awk '{print $NF}')"
 
 echo ""
 echo "=========================================="

@@ -2,17 +2,15 @@
 # Benchmark script for Strassen Algorithm matrix multiplication assignment
 # Tests all three implementations with required matrix sizes and process counts
 
-set -e
+set -euo pipefail
 
 echo "=== Strassen Algorithm Matrix Multiplication Benchmark ==="
 echo "Compiling all programs..."
-
-# Compile all programs
-gcc sequentialMult.c -o sequentialMult
-gcc parallelRowMult.c -o parallelRowMult -pthread
-gcc parallelElementMult.c -o parallelElementMult -pthread
-
-echo "Compilation completed successfully!"
+ROOT_DIR="$(cd "$(dirname "$0")/.." && pwd)"
+BUILD_DIR="$ROOT_DIR/compiled"
+make -C "$ROOT_DIR" clean >/dev/null 2>&1 || true
+make -C "$ROOT_DIR" >/dev/null
+echo "Compilation completed successfully at $BUILD_DIR!"
 echo ""
 
 # Matrix sizes to test (as required in assignment)
@@ -25,7 +23,7 @@ echo "Matrix Size | Time (microseconds)"
 echo "------------|-------------------"
 for size in "${MATRIX_SIZES[@]}"; do
     if [ $size -le 1000 ]; then
-        time_output=$(./sequentialMult $size 2>&1 | grep "time=" | awk '{print $NF}' | sed 's/microseconds//')
+        time_output=$("$BUILD_DIR/sequentialMult" "$size" 2>&1 | grep "time=" | awk '{print $NF}' | sed 's/microseconds//')
         printf "%11d | %s\n" $size "$time_output"
     else
         echo "Skipping size $size (too large for sequential)"
@@ -39,7 +37,7 @@ echo "------------|-----------|-------------------"
 for size in "${MATRIX_SIZES[@]}"; do
     for procs in "${PROCESS_COUNTS[@]}"; do
         if [ $size -le 1000 ] && [ $procs -le 100 ]; then
-            time_output=$(./parallelRowMult $size $procs 2>&1 | grep "time=" | awk '{print $NF}' | sed 's/microseconds//')
+            time_output=$("$BUILD_DIR/parallelRowMult" "$size" "$procs" 2>&1 | grep "time=" | awk '{print $NF}' | sed 's/microseconds//')
             printf "%11d | %9d | %s\n" $size $procs "$time_output"
         else
             echo "Skipping size $size with $procs processes (too large)"
@@ -54,7 +52,7 @@ echo "------------|-----------|-------------------"
 for size in "${MATRIX_SIZES[@]}"; do
     for procs in "${PROCESS_COUNTS[@]}"; do
         if [ $size -le 1000 ] && [ $procs -le 100 ]; then
-            time_output=$(./parallelElementMult $size $procs 2>&1 | grep "time=" | awk '{print $NF}' | sed 's/microseconds//')
+            time_output=$("$BUILD_DIR/parallelElementMult" "$size" "$procs" 2>&1 | grep "time=" | awk '{print $NF}' | sed 's/microseconds//')
             printf "%11d | %9d | %s\n" $size $procs "$time_output"
         else
             echo "Skipping size $size with $procs processes (too large)"

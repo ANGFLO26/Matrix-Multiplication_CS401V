@@ -1,11 +1,11 @@
 # 📊 STRASSEN ALGORITHM - CHART VISUALIZATION GUIDE
 
 ## **Tổng quan**
-Dự án này bao gồm **7 biểu đồ cốt lõi** để phân tích hiệu suất của Strassen Algorithm trong các phương pháp nhân ma trận song song.
+Dự án này bao gồm **8 biểu đồ** để phân tích hiệu suất của Strassen Algorithm trong các phương pháp nhân ma trận song song.
 
 ---
 
-## **📈 BIỂU ĐỒ CỐT LÕI (7 biểu đồ)**
+## **📈 DANH SÁCH BIỂU ĐỒ (8 biểu đồ)**
 
 ### **1. Speedup vs Matrix Size** ⭐ **CỐT LÕI**
 - **File**: `01_speedup_vs_matrix_size.png`
@@ -27,18 +27,23 @@ Dự án này bao gồm **7 biểu đồ cốt lõi** để phân tích hiệu s
 - **Mục đích**: Heatmap hiệu quả theo matrix size và process count
 - **Insight**: Tìm vùng tối ưu (màu xanh)
 
-### **9. Algorithm Complexity Comparison** ⭐ **QUAN TRỌNG**
-- **File**: `09_algorithm_complexity.png`
+### **5. Best Time for Large Sizes (≥1536)** ⭐ **QUAN TRỌNG**
+- **File**: `05_best_time_large.png`
+- **Mục đích**: Thời gian tốt nhất cho dải kích thước lớn và phương pháp thắng (Row/Element)
+- **Insight**: Xác định phương pháp tối ưu theo kích thước ≥1536
+
+### **6. Algorithm Complexity Comparison** ⭐ **QUAN TRỌNG**
+- **File**: `06_algorithm_complexity.png`
 - **Mục đích**: So sánh Strassen O(n^log₂7) vs Naive O(n³)
 - **Insight**: Thấy lợi ích lý thuyết của Strassen
 
-### **11. Scalability Analysis** ⭐ **QUAN TRỌNG**
-- **File**: `11_scalability_analysis.png`
+### **7. Scalability Analysis** ⭐ **QUAN TRỌNG**
+- **File**: `07_scalability_analysis.png`
 - **Mục đích**: Phân tích khả năng mở rộng (3 subplots)
 - **Insight**: Speedup, Efficiency, Throughput trends
 
-### **13. 3D Performance Surface** ⭐ **ẤN TƯỢNG**
-- **File**: `13_3d_performance_surface.png`
+### **8. 3D Performance Surface** ⭐ **ẤN TƯỢNG**
+- **File**: `08_3d_performance_surface.png`
 - **Mục đích**: Surface 3D của performance
 - **Insight**: Tìm optimal region trong không gian 3D
 
@@ -69,23 +74,25 @@ reports/visualization/
 ├── README.md                           # Hướng dẫn tổng quan
 ├── CHART_GUIDE.md                      # Hướng dẫn chi tiết (file này)
 ├── code/                               # Scripts tạo biểu đồ
-│   ├── generate_charts.py             # Script cơ bản (1-4)
-│   ├── generate_additional_charts.py  # Script nâng cao (9,11,13)
-│   └── extract_data.py                # Script trích xuất dữ liệu
+│   ├── generate_charts.py             # Script tạo tất cả biểu đồ (01–08)
+│   └── extract_data.py                # Script trích xuất dữ liệu (tùy chọn khi có logs)
 └── data/                              # Dữ liệu đã xử lý
-    ├── raw_data.csv                  # Dữ liệu thô
+    ├── raw_data.csv                  # Dữ liệu thô (≤1024)
     ├── raw_data.json                 # Dữ liệu thô (JSON)
-    ├── speedup_data.csv              # Dữ liệu speedup
+    ├── extended_benchmark_data.csv   # Dữ liệu mở rộng (đến 6144)
+    ├── extended_benchmark_data.json  # Dữ liệu mở rộng (JSON)
+    ├── speedup_data.csv              # Dữ liệu speedup (≤1024)
     └── speedup_data.json             # Dữ liệu speedup (JSON)
 
-reports/charts/                        # Biểu đồ chính (7 files)
+reports/charts/                        # Biểu đồ (8 files)
 ├── 01_speedup_vs_matrix_size.png
 ├── 02_speedup_vs_process_count.png
 ├── 03_row_vs_element_comparison.png
 ├── 04_efficiency_heatmap.png
-├── 09_algorithm_complexity.png
-├── 11_scalability_analysis.png
-└── 13_3d_performance_surface.png
+├── 05_best_time_large.png
+├── 06_algorithm_complexity.png
+├── 07_scalability_analysis.png
+└── 08_3d_performance_surface.png
 ```
 
 ---
@@ -95,8 +102,7 @@ reports/charts/                        # Biểu đồ chính (7 files)
 ### **Tạo tất cả biểu đồ:**
 ```bash
 cd reports/visualization/code
-python3 generate_charts.py              # Biểu đồ 1-4
-python3 generate_additional_charts.py   # Biểu đồ 9, 11, 13
+python3 generate_charts.py              # Sinh tất cả biểu đồ 01–08
 ```
 
 ### **Tạo biểu đồ riêng lẻ:**
@@ -106,7 +112,7 @@ Chỉnh sửa script để chỉ tạo biểu đồ cần thiết.
 
 ## **📊 THỐNG KÊ BIỂU ĐỒ**
 
-- **Tổng số**: 7 biểu đồ cốt lõi
+- **Tổng số**: 8 biểu đồ
 - **Kích thước**: 2.4MB
 - **Độ phân giải**: 300 DPI
 - **Format**: PNG
@@ -128,8 +134,8 @@ Chỉnh sửa script để chỉ tạo biểu đồ cần thiết.
 ## **📈 INSIGHTS CHÍNH**
 
 1. **Strassen Algorithm** cho thấy speedup tốt với matrix size lớn
-2. **Parallel Row** thường tốt hơn **Parallel Element** 
-3. **Optimal process count** tăng theo matrix size
+2. **Parallel Row** tốt ở ≤1024; **Parallel Element** trội về thời gian ở ≥1536 (trừ 1536)
+3. **Optimal process count**: 10–32 (256–512, Row); 100–1000 (1024, Row); 32–256 (≥1536, Element)
 4. **Memory usage** tăng theo O(n²)
 5. **Overhead** tăng với số process cao
 6. **3D surface** cho thấy vùng tối ưu rõ ràng
