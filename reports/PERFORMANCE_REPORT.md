@@ -20,12 +20,12 @@
 - **Cache**: L1/L2/L3 cache available
 
 ### Cấu hình benchmark
-- **Matrix sizes**: 4×4, 8×8, 16×16, 32×32, 64×64, 128×128, 256×256, 512×512, 1024×1024
-- **Process counts**: 10, 100, 1000
+- **Matrix sizes (gốc)**: 4×4 → 1024×1024; **(mở rộng)**: 1536 → 6144
+- **Process counts (gốc)**: 10, 100, 1000; **(mở rộng)**: 32 → 2000 tùy kích thước
 - **Repetitions**: 1 run per configuration (fixed seed)
 - **Timing**: gettimeofday() với microsecond precision
 
-## 📊 DỮ LIỆU THỰC NGHIỆM CHI TIẾT
+## 📊 DỮ LIỆU THỰC NGHIỆM CHI TIẾT (MỞ RỘNG ĐẾN 6144)
 
 ### Bảng 1: Thời gian thực thi (microseconds)
 
@@ -41,7 +41,21 @@
 | 512×512     | 75,109     | 28,016              | 29,359               | 57,417                | 62,455                  | 69,295                   | 95,762                    |
 | 1024×1024   | 540,443    | 648,490             | 397,029              | 323,885               | 472,776                 | 613,917                  | 867,893                   |
 
-### Bảng 2: Speedup Analysis
+Các kích thước ≥1536: không có giá trị tuần tự tương ứng trong dữ liệu gốc; dưới đây là bảng “thời gian tốt nhất” theo phương pháp/tiến trình:
+
+### Bảng 1b: Thời gian tốt nhất cho kích thước lớn (seconds)
+| Matrix Size | Best Time (s) | Method | Processes |
+|-------------|----------------|--------|-----------|
+| 1536×1536   | 2.802          | Parallel Row     | 1024      |
+| 2048×2048   | 8.833          | Parallel Element | 32        |
+| 2560×2560   | 18.607         | Parallel Element | 32        |
+| 3072×3072   | 35.804         | Parallel Element | 128       |
+| 3584×3584   | 63.007         | Parallel Element | 128       |
+| 4096×4096   | 105.498        | Parallel Element | 128       |
+| 5120×5120   | 299.282        | Parallel Element | 2000      |
+| 6144×6144   | 547.510        | Parallel Element | 512       |
+
+### Bảng 2: Speedup Analysis (chỉ cho kích thước có baseline tuần tự ≤1024)
 
 | Matrix Size | Best Parallel Row | Speedup | Best Parallel Element | Speedup | Efficiency |
 |-------------|-------------------|---------|----------------------|---------|------------|
@@ -49,7 +63,7 @@
 | 512×512     | p=10              | 2.68x   | p=10                 | 1.20x   | 26.8%      |
 | 1024×1024   | p=1000            | 1.67x   | p=10                 | 1.14x   | 16.7%      |
 
-### Bảng 3: Memory Usage Analysis
+### Bảng 3: Memory Usage Analysis (chỉ thị, không suy ra từ baseline ≥1536)
 
 | Matrix Size | Memory (MB) | Sequential Time (ms) | Parallel Time (ms) | Memory Efficiency |
 |-------------|--------------|---------------------|-------------------|-------------------|
@@ -121,7 +135,7 @@ while (1) {
 - Poor cache locality
 - Không tận dụng được Strassen structure
 
-### 3. Process Count Optimization
+### 3. Process Count Optimization (cập nhật theo dữ liệu mở rộng)
 
 #### Small Matrices (≤128×128)
 - **Overhead > Benefit**: Process creation cost cao
@@ -129,14 +143,14 @@ while (1) {
 - **Threshold**: < 10 processes
 
 #### Medium Matrices (256×256-512×512)
-- **Optimal range**: 10-100 processes
-- **Sweet spot**: 10 processes cho 256×256
-- **Reasoning**: Balance between parallelism và overhead
+- **Optimal range**: khoảng 10–32 processes (Row)
+- **Sweet spot**: 10 processes cho 256×256; 10–32 cho 512×512
+- **Reasoning**: Cân bằng giữa song song hóa và overhead
 
 #### Large Matrices (≥1024×1024)
-- **Scaling**: 100-1000 processes có thể hiệu quả
-- **Bottleneck**: Memory bandwidth
-- **Diminishing returns**: Speedup giảm dần
+- **1024×1024**: 100–1000 processes (Row) tốt nhất theo dữ liệu gốc
+- **≥1536**: `Parallel Element` thường vượt `Parallel Row` về thời gian; khoảng 32–256 processes (điển hình 128) cho kết quả tốt; ngoại lệ 5120×5120 tốt nhất ở 2000 processes
+- **Bottleneck**: Memory bandwidth; returns giảm dần khi tăng processes quá lớn
 
 ### 4. Performance Bottlenecks
 
@@ -162,15 +176,15 @@ while (1) {
 - **Parallel**: Tương tự nhưng với speedup
 - **Crossover point**: 256×256 là điểm bắt đầu hiệu quả
 
-### 2. Speedup vs Process Count
-- **Peak performance**: 10 processes cho ma trận trung bình
-- **Diminishing returns**: Speedup giảm với quá nhiều processes
-- **Optimal range**: 10-100 processes
+### 2. Speedup vs Process Count (≤1024)
+- **Peak performance**: ~10 processes cho 256×256; 10–32 cho 512×512; 100–1000 cho 1024×1024 (Row)
+- **Diminishing returns**: Speedup giảm khi tăng processes quá lớn
+- **≥1536**: Không tính speedup do thiếu baseline; biểu đồ nên hiển thị thời gian tốt nhất theo processes/method
 
 ### 3. Memory Usage vs Performance
 - **Linear relationship**: Memory usage tăng tuyến tính với matrix size
 - **Efficiency**: Memory efficiency giảm với ma trận lớn
-- **Bottleneck**: Memory bandwidth với ma trận ≥1024×1024
+- **Bottleneck**: Memory bandwidth với ma trận ≥1024×1024; không tính speedup/efficiency cho ≥1536 do thiếu baseline tuần tự
 
 ## 🛠️ IMPLEMENTATION DETAILS
 
@@ -217,9 +231,9 @@ for (int i = 0; i < num_processes; i++) {
 
 ### Performance Characteristics
 1. **Strassen Algorithm**: Hiệu quả với ma trận ≥256×256
-2. **Parallel Row**: Tối ưu cho hầu hết trường hợp
-3. **Process Count**: 10-100 processes cho ma trận trung bình
-4. **Memory**: Linear growth, bandwidth bottleneck với ma trận lớn
+2. **Parallel Row**: Tối ưu ở ≤1024; **Parallel Element** trội về thời gian ở ≥1536 (trừ 1536)
+3. **Process Count**: 10–32 (256–512, Row); 100–1000 (1024, Row); 32–256 (≥1536, Element; 5120 ngoại lệ ~2000)
+4. **Memory**: Linear growth; bandwidth bottleneck với ma trận rất lớn
 
 ### Bottleneck Analysis
 1. **Memory Bandwidth**: Giới hạn với ma trận ≥1024×1024

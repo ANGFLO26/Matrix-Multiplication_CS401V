@@ -12,19 +12,22 @@ reports/visualization/
 ├── code/                        # Code để tạo biểu đồ
 │   ├── generate_charts.py      # Script chính tạo biểu đồ
 │   └── extract_data.py         # Script trích xuất dữ liệu
-├── data/                        # Dữ liệu đã xử lý
-│   ├── raw_data.csv            # Dữ liệu thô từ log
+├── data/                        # Dữ liệu
+│   ├── raw_data.csv            # Dữ liệu thô từ log (≤1024)
 │   ├── raw_data.json           # Dữ liệu thô (JSON)
-│   ├── speedup_data.csv        # Dữ liệu speedup
+│   ├── extended_benchmark_data.csv # Dữ liệu mở rộng (đến 6144)
+│   ├── extended_benchmark_data.json
+│   ├── speedup_data.csv        # Dữ liệu speedup (≤1024 có baseline)
 │   └── speedup_data.json       # Dữ liệu speedup (JSON)
-└── output/                      # Biểu đồ đã tạo
+└── ../charts/                   # Biểu đồ đã tạo (đặt tại reports/charts/)
     ├── 01_speedup_vs_matrix_size.png
     ├── 02_speedup_vs_process_count.png
     ├── 03_row_vs_element_comparison.png
     ├── 04_efficiency_heatmap.png
-    ├── 05_optimal_process_analysis.png
-    ├── 07_memory_usage_analysis.png
-    └── 08_overhead_analysis.png
+    ├── 06_best_time_large.png
+    ├── 09_algorithm_complexity.png
+    ├── 11_scalability_analysis.png
+    └── 13_3d_performance_surface.png
 ```
 
 ## 📈 Các biểu đồ được tạo
@@ -32,7 +35,7 @@ reports/visualization/
 ### 1. **Speedup vs Matrix Size** (`01_speedup_vs_matrix_size.png`)
 - **Mục đích**: Thấy xu hướng speedup theo kích thước ma trận
 - **Loại**: Line chart với multiple series
-- **X-axis**: Matrix size (4, 8, 16, 32, 64, 128, 256, 512, 1024)
+- **X-axis**: Matrix size (4 → 1024; chỉ phạm vi có baseline tuần tự)
 - **Y-axis**: Speedup
 - **Series**: Parallel Row (p=10, p=100, p=1000), Parallel Element (p=10, p=100, p=1000)
 
@@ -47,8 +50,9 @@ reports/visualization/
 - **Mục đích**: So sánh trực tiếp hiệu quả
 - **Loại**: Bar chart
 - **X-axis**: Matrix size
-- **Y-axis**: Execution time (μs)
-- **Series**: Sequential, Parallel Row (Best), Parallel Element (Best)
+- **Y-axis**: Execution time (μs, s)
+- **Series**: Sequential (≤1024), Parallel Row (Best), Parallel Element (Best)
+- **Lưu ý**: Với ≥1536 chỉ so sánh thời gian giữa Row/Element do thiếu baseline tuần tự
 
 ### 4. **Efficiency Heatmap** (`04_efficiency_heatmap.png`)
 - **Mục đích**: Thấy pattern hiệu quả
@@ -57,28 +61,28 @@ reports/visualization/
 - **Y-axis**: Matrix size
 - **Color**: Speedup value
 
-### 5. **Optimal Process Analysis** (`05_optimal_process_analysis.png`)
-- **Mục đích**: Tìm quy luật optimal process count
-- **Loại**: Scatter plot với trend line
-- **X-axis**: Matrix size
-- **Y-axis**: Optimal process count
+### 6. **Best Time for Large Sizes** (`06_best_time_large.png`)
+- **Mục đích**: Thể hiện thời gian tốt nhất cho dải ≥1536, và phương pháp thắng (Row/Element)
+- **Loại**: Line + annotations
+- **X-axis**: Matrix size (≥1536)
+- **Y-axis**: Best time (s, log scale)
+- **Ghi chú**: Nhãn chú thích tại mỗi điểm nêu rõ phương pháp thắng
 
-### 7. **Memory Usage Analysis** (`07_memory_usage_analysis.png`)
-- **Mục đích**: Phát hiện memory bottleneck
-- **Loại**: Line chart
-- **X-axis**: Matrix size
-- **Y-axis**: Memory usage (MB)
+### 9. **Algorithm Complexity** (`09_algorithm_complexity.png`)
+- **Mục đích**: So sánh độ phức tạp lý thuyết (Naive vs Strassen) và hiệu năng thực tế (scaled)
+- **Loại**: Line chart (log-log)
 
-### 8. **Overhead Analysis** (`08_overhead_analysis.png`)
-- **Mục đích**: Phân tích overhead
-- **Loại**: Stacked bar chart
-- **X-axis**: Matrix size
-- **Y-axis**: Time breakdown
-- **Stacks**: Computation time, Overhead time
+### 11. **Scalability Analysis** (`11_scalability_analysis.png`)
+- **Mục đích**: Phân tích speedup, efficiency (%), throughput (ops/sec) theo kích thước và số tiến trình
+- **Loại**: 3 subplot (line)
+
+### 13. **3D Performance Surface** (`13_3d_performance_surface.png`)
+- **Mục đích**: Bề mặt 3D thể hiện speedup theo (size, processes)
+- **Loại**: 3D surface
 
 ## 🚀 Cách sử dụng
 
-### 1. Trích xuất dữ liệu
+### 1. Trích xuất dữ liệu (tùy chọn nếu có log)
 ```bash
 cd reports/visualization/code
 python3 extract_data.py
@@ -87,12 +91,12 @@ python3 extract_data.py
 ### 2. Tạo biểu đồ
 ```bash
 cd reports/visualization/code
-python3 generate_charts.py
+python3 generate_charts.py  # đọc trực tiếp từ data/*.json, không cần logs
 ```
 
 ### 3. Xem kết quả
 ```bash
-ls ../output/
+ls ../charts/
 ```
 
 ## 📋 Yêu cầu hệ thống
@@ -126,9 +130,9 @@ plt.style.use('seaborn-v0_8')  # hoặc 'default', 'ggplot', etc.
 ## 📊 Phân tích kết quả
 
 ### Xu hướng chính
-1. **Speedup tăng theo matrix size**: Ma trận lớn hơn → speedup tốt hơn
-2. **Optimal process count**: 10-100 processes cho ma trận trung bình
-3. **Parallel Row hiệu quả hơn**: So với Parallel Element
+1. **Speedup tăng theo matrix size**: Ma trận lớn hơn → speedup tốt hơn (≤1024)
+2. **Optimal process count**: 10-100 processes cho ma trận trung bình (≤1024); ≥1536 xem “best time”
+3. **Parallel Row** hiệu quả hơn ở ≤1024; **Parallel Element** tốt hơn ở ≥1536
 4. **Memory bottleneck**: Với ma trận ≥1024×1024
 
 ### Bottleneck patterns

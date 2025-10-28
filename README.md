@@ -29,15 +29,16 @@ This project implements and compares three different approaches to matrix multip
 ```bash
 # Clone the repository
 git clone <repository-url>
-cd assignment1_code
+cd Matrix-Multiplication_CS401V
 
 # Compile all programs
-make all
+make
 
 # Or compile individually
-gcc src/sequentialMult.c -o compiled/sequentialMult
-gcc src/parallelRowMult.c -o compiled/parallelRowMult -pthread
-gcc src/parallelElementMult.c -o compiled/parallelElementMult -pthread
+mkdir -p compiled
+gcc src/sequentialMult.c src/strassen_utils.c -o compiled/sequentialMult -O2 -lm
+gcc src/parallelRowMult.c src/strassen_utils.c -o compiled/parallelRowMult -O2 -lm
+gcc src/parallelElementMult.c src/strassen_utils.c -o compiled/parallelElementMult -O2 -lm
 ```
 
 ### Running Tests
@@ -63,10 +64,10 @@ gcc src/parallelElementMult.c -o compiled/parallelElementMult -pthread
 | 512×512     | 75.1ms     | 28.0ms              | 2.68x   | 29.4ms               | 2.56x   |
 | 1024×1024   | 540.4ms    | 648.5ms             | 0.83x   | 397.0ms              | 1.36x   |
 
-## 🏗️ Project Structure (Fully Optimized)
+## 🏗️ Project Structure
 
 ```
-📁 assignment1_code/
+📁 Matrix-Multiplication_CS401V/
 ├── 📄 README.md                    # Tài liệu chính
 ├── 📄 requirements.txt             # Yêu cầu hệ thống
 ├── 📄 Makefile                     # Build automation
@@ -77,7 +78,7 @@ gcc src/parallelElementMult.c -o compiled/parallelElementMult -pthread
 │   ├── common.h                   # Common utilities
 │   ├── strassen_utils.h           # Strassen utilities header
 │   └── strassen_utils.c           # Strassen utilities implementation
-├── 📁 compiled/                    # Executables (76KB) ⭐ CẦN THIẾT
+├── 📁 compiled/                    # Executables (nếu build thủ công)
 │   ├── sequentialMult
 │   ├── parallelRowMult
 │   └── parallelElementMult
@@ -87,28 +88,28 @@ gcc src/parallelElementMult.c -o compiled/parallelElementMult -pthread
 │   └── benchmark_report.sh        # Report generation
 ├── 📁 docs/                        # Documentation (316KB)
 │   └── Assignment 1 - CS401V - Distributed Systems.pdf
-└── 📁 reports/                     # TẤT CẢ BÁO CÁO VÀ KẾT QUẢ (2.6MB)
+└── 📁 reports/                     # TẤT CẢ BÁO CÁO VÀ KẾT QUẢ
     ├── 📄 FINAL_REPORT.md          # Báo cáo chính
     ├── 📄 PERFORMANCE_REPORT.md   # Báo cáo kỹ thuật
     ├── 📄 SUMMARY_RESULTS.md       # Tóm tắt kết quả
-    ├── 📁 charts/                  # Biểu đồ đã tạo (7 files)
+    ├── 📁 charts/                  # Biểu đồ đã tạo
     │   ├── 01_speedup_vs_matrix_size.png
     │   ├── 02_speedup_vs_process_count.png
     │   ├── 03_row_vs_element_comparison.png
     │   ├── 04_efficiency_heatmap.png
-    │   ├── 09_algorithm_complexity.png
-    │   ├── 11_scalability_analysis.png
-    │   └── 13_3d_performance_surface.png
-    ├── 📁 logs/                    # Benchmark logs
-    │   └── strassen_comprehensive.log
+    │   ├── 05_best_time_large.png
+    │   ├── 06_algorithm_complexity.png
+    │   ├── 07_scalability_analysis.png
+    │   └── 08_3d_performance_surface.png
     └── 📁 visualization/           # Hệ thống tạo biểu đồ
         ├── 📁 code/                # Scripts tạo biểu đồ
-        │   ├── extract_data.py     # Data extraction
-        │   ├── generate_charts.py  # Basic charts (1-4)
-        │   └── generate_additional_charts.py # Advanced charts (9,11,13)
-        ├── 📁 data/                # Dữ liệu đã xử lý
+        │   ├── extract_data.py
+        │   └── generate_charts.py
+        ├── 📁 data/                # Dữ liệu
         │   ├── raw_data.csv
         │   ├── raw_data.json
+        │   ├── extended_benchmark_data.csv
+        │   ├── extended_benchmark_data.json
         │   ├── speedup_data.csv
         │   └── speedup_data.json
         ├── 📄 README.md            # Hướng dẫn charts
@@ -130,28 +131,20 @@ gcc src/parallelElementMult.c -o compiled/parallelElementMult -pthread
 
 ## 📈 Performance Analysis
 
-### Scaling Behavior
-- **Small matrices** (< 100×100): Sequential is fastest due to parallel overhead
-- **Medium matrices** (100×1000): Parallel Row with 10-100 processes optimal
-- **Large matrices** (1000×1000+): Parallel Row with 1000 processes optimal
-- **Very large matrices** (2000×2000+): Memory bandwidth becomes bottleneck
+### Scaling Behavior (từ dữ liệu hiện có)
+- **Small** (≤64×64): Sequential nhanh nhất (overhead song song cao)
+- **Medium** (256–512): Parallel Row ~10–32 processes
+- **1024×1024**: Parallel Row 100–1000 processes
+- **Very large** (≥1536): Parallel Element thường tốt hơn; bottleneck băng thông bộ nhớ
 
 ### Key Insights
-1. **Parallel overhead** significant for small matrices
-2. **Row-level parallelization** more efficient than element-level
-3. **Process count optimization** depends on matrix size
-4. **Memory bandwidth** limits scaling for very large matrices
+1. **Parallel overhead** đáng kể cho ma trận nhỏ
+2. **Row-level** hiệu quả ở ≤1024; **Element-level** tốt hơn ở ≥1536 (trừ 1536)
+3. **Process count** phụ thuộc kích thước (10–32; 100–1000; 32–256)
+4. **Memory bandwidth** giới hạn scaling cho ma trận rất lớn
 
 ## 📚 Reports & Documentation
-
-- **FINAL_STRASSEN_REPORT.md**: Comprehensive Strassen Algorithm performance analysis
-- **strassen_analysis_report.md**: Detailed analysis report
-- **charts/**: Performance visualization charts
-  - strassen_execution_time.png: Execution time comparison
-  - strassen_speedup.png: Speedup analysis
-  - strassen_process_analysis.png: Process optimization
-- **logs/**: Benchmark execution logs
-  - strassen_comprehensive.log: Complete benchmark results
+Xem các báo cáo trong `reports/`: `FINAL_REPORT.md`, `PERFORMANCE_REPORT.md`, `SUMMARY_RESULTS.md`. Biểu đồ nằm trong `reports/charts/`.
 
 ## 🛠️ Usage Examples
 
